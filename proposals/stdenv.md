@@ -40,7 +40,7 @@ A selection of projects and companies depending on Nix, Nixpkgs, or NixOS:
 - [INRIA’s Grid’5000 computing cluster](https://nix-tutorial.gitlabpages.inria.fr/nix-tutorial/index.html)
 - [Haskell Stack](https://docs.haskellstack.org/en/stable/nix_integration/)
 - [The European Commission’s IT department](https://www.youtube.com/watch?v=I7wdcJ3YhoU)
-- Various [scientific projects](https://www.youtube.com/watch?v=SjjEDTccpQA)
+- Various [scientific projects](https://www.youtube.com/watch?v=SjjEDTccpQA), such as in [high-performance computing](https://github.com/freuk/awesome-nix-hpc)
 - A plethora of [community projects around Nix](https://github.com/nix-community/)
 
 ## Who benefits from this technology and the improvements or contributions? Which target groups does your project address (who are its users?) and how do they benefit from the funding (directly and indirectly)?
