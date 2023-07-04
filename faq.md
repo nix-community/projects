@@ -20,7 +20,7 @@ We estimate the community to consist of 100 mostly volunteer developers, 2 000 c
 [Recent social media activity](https://www.youtube.com/watch?v=fuWPuJZ9NcU) reaches on the order of 100 000 people.
 The Nix ecosystem is on an [exponential growth trajectory](https://ossinsight.io/analyze/NixOS/nixpkgs#overview) in terms of user adoption and development activity at the periphery.
 
-Nix has the potential to become a default in the software development tool stack, by drastically reducing reducing the time required to start working on software development projects – written in any language – and the cost of maintaining and sharing build setups and development environments.
+Nix has the potential to become a default in the software development tool stack, by drastically reducing the time required to start working on software development projects – written in any language – and the cost of maintaining and sharing build setups and development environments.
 These can build on top of Nixpkgs, which today supplies the largest collection of free software in existence ready for use.
 Packages and services can configured and deployed through NixOS more flexibly, reliably, efficiently than with any comparable tool.
 The Nix ecosystem can enable almost indefinite reproducibility of builds and configurations:
