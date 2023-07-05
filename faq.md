@@ -75,6 +75,9 @@ Ecosystem-wide technical decisions are negotiated in an [RFC process](https://gi
 
 The NixOS Foundation mainly ensures funding for critical assets such as the binary cache, manages permissions in the GitHub organisation, and facilitates community activities. The Foundation board as a legal entity is not involved in technical decisions.
 
+Project governance has immensely gained in structure lately:
+In the past year, four of the eleven currently active community teams were formed, three existing teams gained new members, the NixOS Foundation board was restructured, and there exist plans for setting up paid support roles to ensure continued operations.
+
 ## How does the project handle security risks? Are there policies, procedures, or tools in place to minimize the introduction of vulnerabilities or undesired contributions?
 
 Asked by:
