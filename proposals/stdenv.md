@@ -4,7 +4,7 @@
 
 [Nix](https://nix.dev/) is an open source build system, configuration management system, and mechanism for deploying software, focused on reproducibility. It is the basis of an ecosystem of exceptionally powerful tools – including Nixpkgs, [the largest, most up-to-date software repository in the world](https://repology.org/repositories/graphs), and NixOS, a Linux distribution that can be configured fully declaratively, with unmatched flexibility. For its proponents, Nix embodies technology sovereignty. It is leveraged and relied upon by computer enthusiasts, professionals, and organisations who recognise its value for all steps in the software development lifecycle.
 
-The particular component this project aims to improve is the documentation for the [Standard Environment](https://nixos.org/manual/nixpkgs/unstable/#part-stdenv) and [Build Helpers](https://nixos.org/manual/nixpkgs/unstable/#part-builders) in Nixpkgs. The standard environment forms the technical foundation for the massive package collection, and is augmented by build helpers that allow packaging software from various [language ecosystems](https://nixos.org/manual/nixpkgs/unstable/#chap-language-support) and reliably [cross-compile](https://nixos.org/manual/nixpkgs/unstable/#chap-cross) software. These areas are at the core of Nix’s unique strengths, and the daily driver of developers leveraging Nixpkgs to secure repeatable production of artefacts.
+The particular component this project aims to improve is the documentation for the [Standard Environment](https://nixos.org/manual/nixpkgs/unstable/#part-stdenv), [Build Helpers](https://nixos.org/manual/nixpkgs/unstable/#part-builders), and [library reference](https://nixos.org/manual/nixpkgs/unstable/#id-1.4) in Nixpkgs. The standard environment forms the technical foundation for the massive package collection, and is augmented by build helpers that allow packaging software from various [language ecosystems](https://nixos.org/manual/nixpkgs/unstable/#chap-language-support) and reliably [cross-compile](https://nixos.org/manual/nixpkgs/unstable/#chap-cross) software. These areas are at the core of Nix’s unique strengths, and the daily driver of developers leveraging Nixpkgs to secure repeatable production of artefacts.
 
 ## Why is this technology critical? Please explain to us the relevance of this technology.
 
@@ -71,23 +71,10 @@ In the past, Nix gained an unfortunate reputation of having a steep learning cur
 
 While the mentioned chapters in the Nixpkgs manual are central to the entire ecosystem and critically important early on in user onboarding, they are by far the weakest parts of documentation and a clear hindrance to adoption – well known among new users, contributors, and maintainers for lack of crucial information, poor discoverability, and densely written text full of unfamiliar concepts and terminology (to the point of being the subject of [elaborate mockery](https://ianthehenry.com/posts/how-to-learn-nix/)). Most importantly, this part of documentation is **effectively unmaintained** as currently no one has the resources to take ownership.
 
-Nixpkgs is a large software project, and one of the largest public GitHub repositories. The code itself originated from research projects in [2004](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi5o8mAwOn_AhWBS_EDHRolCnQQFnoECA4QAQ&url=https%3A%2F%2Fedolstra.github.io%2Fpubs%2Fnspfssd-lisa2004-final.pdf&usg=AOvVaw10O4UewT2sh6kUSXYR3jNC&opi=89978449) and [2006](https://nixos.org/docs/SCR-2005-091.pdf), and albeit always serving its purpose, for various reasons has grown without clear direction since and saw, at best, sparse efforts to provide approachable documentation. It is [notoriously difficult to read and navigate](https://discourse.nixos.org/t/where-is-callpackage-defined-exactly-part-2/12524), only understood well by a few people, and attempts at documenting it appropriately proved extraordinarily difficult: On the one hand, deep contextual knowledge is required to fully grasp it. On the other hand, the existing documentation is ill-structured, but relied-upon by many users and must therefore not change in ways such that important information is lost. The documentation team is now at a crucial point where we have built up enough capacity, expertise, and community support to tackle the skill-based problem of producing correct and helpful documentation and presenting it in appropriate locations; we also have built up enough organisational structures and routines to deal with the coordination problem of incrementally reorganising a large information system in a division of labor.
+Nixpkgs is a large software project, and one of the largest public GitHub repositories. The code itself originated from research projects in [2004](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi5o8mAwOn_AhWBS_EDHRolCnQQFnoECA4QAQ&url=https%3A%2F%2Fedolstra.github.io%2Fpubs%2Fnspfssd-lisa2004-final.pdf&usg=AOvVaw10O4UewT2sh6kUSXYR3jNC&opi=89978449) and [2006](https://nixos.org/docs/SCR-2005-091.pdf), and albeit always serving its purpose, for various reasons has grown without clear direction since and saw, at best, sparse efforts to provide approachable documentation. The documentation team is now at a crucial point where we have built up enough capacity, expertise, and community support to tackle the skill-based problem of producing correct and helpful documentation and presenting it in appropriate locations; we also have built up enough organisational structures and routines to deal with the coordination problem of incrementally reorganising a large information system in a division of labor.
 
-This project aims for a complete revision of the [Standard Environment](https://nixos.org/manual/nixpkgs/unstable/#part-stdenv) and [Build Helpers](https://nixos.org/manual/nixpkgs/unstable/#part-builders) chapters in the Nixpkgs manual. We will employ techniques and tactics that have proven successful in past activities, and build on our experience with the particularities of the technology and community:
+This project aims for a complete revision of the [Standard Environment](https://nixos.org/manual/nixpkgs/unstable/#part-stdenv), [Build Helpers](https://nixos.org/manual/nixpkgs/unstable/#part-builders), and [library reference](https://nixos.org/manual/nixpkgs/unstable/#id-1.4) chapters in the Nixpkgs manual, and do other clean-up work in context. Specific goals are, roughly in order of importance:
 
-- Diligently survey existing first- and third-party documentation
-- Work incrementally on many small changes
-- Work in pairs or small teams
-- Distribute high-context and low-context tasks according to level of expertise and availability
-- Improve processes as we go, so others can follow more easily
-- Plan for enough review capacity among project participants
-- Involve maintainers and experts for reviews and consultation
-- Run usability studies for validation
-- Share knowledge and provide opportunities for volunteers to contribute
-
-Specific goals are, roughly in order of importance:
-
-- Survey and take inventory of key issues
 - Clarify key concepts, mechanisms, and common use cases
 - Improve structure and language
 - Ensure that the entire API surface is visible
@@ -100,11 +87,10 @@ Specific goals are, roughly in order of importance:
     - Automatic testing of examples
     - Stable URLs and automatic redirects
     - Better automatic rendering of in-code comments
-- Improve contributor experience as the need arises
+- Improve contribution workflows
 
-Since these manual chapters are currently unmaintained and (to our knowledge) there exists no person who knows them completely, a significant part of the initial work will consist of reading source code, mapping out concepts and key use cases, as well as planning and coordinating changes. It will be followed by work on correctly representing concepts (which cannot be parallelised) and improving superficial structure and language (which can be parallelised well). This will likely be accompanied by deep structural changes once the team gets more into the context. This is how we proceed in our ongoing project concerning the learning materials, and this is consistently leading to satisfying results at the pace our funding allows.
-
-Given the situation has many unknowns, the work has characteristics of a research project to the extent that while we are sure to make progress and tangible improvements by doing what we usually do, just a lot more of that, it’s impractical to determine concrete deliverables and we deem it silly to invent artificial success metrics such as “number of cross-links”. While we do have experience with user testing, it is an expensive technique that we would use sparingly.
+Since these manual chapters are currently unmaintained and (to our knowledge) there exists no person who knows them completely, a significant part of the initial work will consist of reading source code, mapping out concepts and key use cases, as well as planning and coordinating changes. It will be followed by work on correctly representing concepts (which cannot be parallelised) and improving superficial structure and language (which can be parallelised well). This will be accompanied by deep structural changes once the team gets more into the context.
+Another major aspect will be technical changes addressign problems with discoverability, visual presentation, and contributor experience, the work on which can run in parallel to the editorial effort.
 
 The Nix documentation team has a track record of achieving substantial improvements over long stretches of time-constrained work, which we document in various reports, for example:
 
@@ -117,8 +103,8 @@ The Nix documentation team has a track record of achieving substantial improveme
 
 With support of the NixOS Foundation, the Nix documentation team not only works on improving technical documentation and creating educational content, but also continues driving organisational maturity of the ecosystem by setting examples of running community-driven teams [fully in the open](https://discourse.nixos.org/c/dev/documentation/25) and connecting domain experts with new users and contributors. We hope that with carrying out a large project, we can demonstrate
 
-- public collaboration across organisational boundaries on a valuable shared resource
-- application of best practices in developer-focused documentation in a realistic setting
+- Public collaboration across organisational boundaries on a valuable shared resource
+- Application of best practices in developer-focused documentation in a realistic setting
 
 to the wider open source and software development community.
 
@@ -128,18 +114,59 @@ Software developers are a broadly agreed-upon target audience for Nix community 
 
 ## How will you accomplish the work? Please provide a list of deliverables with associated effort and cost of each deliverable.
 
-- 2 senior engineers, responsible for the project (2\*40h/w = 2\*80 person-days, 128 000 EUR)
-- 2 junior engineers (2\*40h/w = 2\*80 person-days, 102 400 EUR)
+Goals: Identify changes that have lasting effect after the project is finished.
+
+#### Technical
+
+- Split the manual into separate pages (2w, 8 000 EUR)
+- Automatically collect and add SEO-relevant metadata to manual pages (1w, 4 000 EUR)
+- Display full table of contents in one place (2d, 1 600 EUR)
+- Changes to phases/hooks/shell-functions documentation should not require a mass rebuild (1w, 4 000 EUR)
+- Render documentation for shell utilities from source (3d, 2 400 EUR)
+- Allow for multiple examples in in-code comments (1w, 4 000 EUR)
+- Stable URLs to all manual versions (1w, 4 000 EUR)
+- "Edit" button on each page (2d, 1 600 EUR)
+- Add breadcrumb navigation (1d, 800 EUR)
+- Display maintainers and last-edited date for each page (2d, 1 600 EUR)
+- Provide infrastructure for auto-testing code samples (5w, 20 000 EUR)
+- Add markup support for glossary terms (1d, 800 EUR)
+- Preprocess manual output for styling and design new style sheet (3w, 12 000 EUR)
+
+Total: 81 person days, 64 800 EUR
+
+#### Editorial
+
+- Rework the introduction and overview section to match contents and capabilities of the Nixpkgs manual (3d, 2 400 EUR)
+- Make the "Specifying Dependencies" section beginner-friendly (3w, 12 000 EUR)
+- Fold module system documentation in one chapter (2d, 1 600 EUR)
+- Make the introduction to the module system beginner-friendly (2w, 8 000 EUR)
+- Remove references to `nix-env` (2d, 1 600 EUR)
+- Remove references to NixOS configurations (1d, 800 EUR)
+    - will reduce confusion over distinctions of components
+- Compile a glossary (2w, 8 000 EUR)
+- Rework the preface (1d, 800 EUR)
+- Reshape the "Using Nixpkgs" chapter to be a listing of configuration options and ways to apply them (2d, 1 600 EUR)
+- Define uniform formatting of listings and examples in the contributor's guide (2d, 1 600 EUR)
+- Crowd sourcing tasks (done in parallel)
+    - Every listing should be complete, with examples, and have an overview section highlighting the most important aspects (3w, 6 000 EUR)
+    - Check all descriptions and examples in `lib` docs for usefulness and fix up (2w, 2 000 EUR)
+    - Apply formatting rules (1w, 2 000 EUR)
+    - Add references to glossary terms (1w, 2 000 EUR)
+- Survey and clean up the ["Hooks reference"](https://nixos.org/manual/nixpkgs/unstable/#chap-hooks) section (1w, 4 000 EUR)
+- Rework the chapter structure (1w, 4 000 EUR)
 - Maintainer reviews and consultation (10h/w = 160h, 16 000 EUR)
-- Lectorate (9600 EUR)
-- Development, execution, and evaluation of usability studies (100h, 6 000 EUR)
 - Administrative support (4h/w = 64h, 5 120 EUR)
+- Development, execution, and evaluation of usability studies (100h, 6 000 EUR)
+
+Total: 133 person days, 85 520 EUR
+
+### Total
+
+214 person days, 150 320 EUR
 
 Explanation:
-
-From our immediate experience, adding more inexperienced contributors does not increase velocity (see [Brooks’s law](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiX44eR4-n_AhXBVvEDHYYsDh0QFnoECA4QAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBrooks%2527s_law&usg=AOvVaw3VUN9Zx_P-5BEAAKFqcjfK&opi=89978449)). The bottleneck are always reviews for conceptual and technical correctness, and those can only be done effectively by experts, and are made easier with high-quality contributions. We deem it most sensible to let people collaborate on that narrow subject who already have years of practice in their respective domain, know each other well, and can be trusted to autonomously execute according to the project’s goals. The documentation team has close ties with companies involved in the Nix ecosystem, with access to a small pool of experienced developers who would fit the requirements for this task.
-
-While the effort can be scaled down dynamically, we should ensure a team size of 3-4 people and an engagement that is closer to full-time than to half-time. For we also know from experience that it will be almost impossible to staff such a project for a 20h/w engagement, and fewer than 3 fully engaged participants will be blocked on reviewing each others’ and volunteer contributors’ work (which can be expected to continue flowing in).
+Based on experience we plan enough time for reviews and technical design and editorial work, this is incorporated in the calculation.
+We assume software developer rates also for most editorial work, as editing the documentation content requires specific expertise that we cannot expect from outsiders.
 
 ## Describe your relationship to the maintainers of this technology. Are you yourself the maintainer? Do they know you plan to do this work and do they support it? Please tell us more about how you obtained their support and how you plan to work together to make sure your contributions are accepted.
 
