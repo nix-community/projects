@@ -215,7 +215,7 @@ To validate that the work done indeed constitutes improvements, we will run anot
 This project proposal was developed and written collaboratively by the Nix documentation team, which is responsible for all official Nix documentation, and will lead and coordinate the activities proposed here.
 
 I am founding member and current lead of the documentation team, and also participate in the Nix maintainers team.
-The problems outlined here are well known to all maintainers, and solutions have been discussed in the past and up to recently without action.
+The problems outlined here are well known to all maintainers, but due to lack of resources, solutions have been proposed and discussed but not implemented.
 Fundraising activities are agreed upon and welcomed.
 
 Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4), with support of the NixOS Foundation board:
