@@ -150,7 +150,7 @@ That would reduce maintainers’ work load and contribute to making the maintain
 
 ## How will you accomplish the work? Please provide a list of deliverables with associated effort and cost of each deliverable.
 
-- Inventorise and document the intent of existing tests (2w, 8 000 EUR)
+- Take inventory and document the intent of existing tests (2w, 8 000 EUR)
 - Set up CI to report on test coverage (2w, 8 000 EUR)
 - Split out `libstore` to be self-contained (3w, 12 000 EUR)
 - Improve factoring and in-code documentation (4w, 16 000 EUR)
@@ -177,7 +177,7 @@ Explanation:
 The working mode we envision based on experience is to allocate a significant portion of time for reviews – for code quality and consistency, as a vehicle for knowledge sharing, and to ensure high standards for documentation.
 This is incorporated in the estimates.
 
-Nix maintainers essentially have to buy their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding.
+Nix maintainers essentially have to dedicate their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding.
 Therefore we have to assume consultancy rates to be able to keep to the time frame, with the option to trade budget for velocity to some extent.
 
 We expect multiple contributors to work in parallel where possible.
