@@ -217,8 +217,8 @@ We expect multiple contributors to work in parallel where possible.
 
 [1. Security tracker]
 
-I am not part of [security team](), but I am [contributor](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+author%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed) and [reviewer of security fixes](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+reviewed-by%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed+) in nixpkgs in critical software.
-and I am the [current release manager of NixOS](https://nixos.org/community/teams/nixos-release.html) and released NixOS 23.05, I had to deal with [Node.js]() and [OpenSSL]() [end of life status]()
+I am not part of [security team](https://nixos.org/community/teams/security.html), but I am [contributor](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+author%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed) and [reviewer of security fixes](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+reviewed-by%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed+) in nixpkgs in critical software.
+and I am the [current release manager of NixOS](https://nixos.org/community/teams/nixos-release.html) and released NixOS 23.05, I had to deal with [Node.js](https://github.com/NixOS/nixpkgs/pull/233399) and [OpenSSL](https://github.com/NixOS/nixpkgs/pull/231899) [end of life status](https://github.com/NixOS/nixpkgs/pull/233024)
 and offers non-bumpy upgrades paths to all our users out there. I am familiar with the challenges of the security team
 as I worked on providing RSS feeds in [pr-tracker](https://git.qyliss.net/pr-tracker) a tracker of "when my PR is in some Nixpkgs channel", discovered [label-tracker](https://git.eno.space/label-tracker.git/)
 which offers this solution for security updates.
