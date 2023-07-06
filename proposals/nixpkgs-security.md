@@ -162,7 +162,7 @@ For the boot security chain, here is the list of deliverables:
 
 - [ ] Preparatory fundamental upstream features (systemd and more): 4w, 10K EUR.
 - [ ] NixOS's default UEFI Secure Boot images via shim and shim-review: 4w, 10K EUR (*)
-- [ ] NixOS RFC "Bootspec v2": 2w, 4K EUR
+- [ ] Kickstarting the NixOS RFC "Bootspec v2" and having an initial working implementation: 2w, 4K EUR
 - [ ] Lanzaboote and TPM2: 4w, 10K EUR
 - [ ] Safe updates (A/B schemas) in NixOS with systemd-boot: 2w, 5K EUR
 - [ ] Safe Nix store via integrity techniques (*-verity): 4w, 10K EUR
