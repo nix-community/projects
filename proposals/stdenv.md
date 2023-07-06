@@ -56,7 +56,7 @@ A selection of projects and companies depending on Nix, Nixpkgs, or NixOS:
 
 ## Who benefits from this technology and the improvements or contributions? Which target groups does your project address (who are its users?) and how do they benefit from the funding (directly and indirectly)?
 
-Tools in the Nix ecosystem are primarily suited to professional software developers and computer enthusiasts (many of which are students), but are also known to support scientific work, and are used as a foundational technology and force multiplier in a multitude of organisations and commercial enterprises.
+Tools in the Nix ecosystem are primarily suited to professional software developers (and computer enthusiasts, many of which are students), but are also known to support scientific work, and are used as a foundational technology and force multiplier in a multitude of organisations and commercial enterprises.
 All these are direct or indirect beneficiaries of improved developer-oriented documentation, through reduced onboarding time, learning effort, and costs of solving common problems, which overall reduces the cost of software development.
 
 The NLnet Foundation is partnering with the NixOS Foundation to leverage Nix’s capabilities for providing sustainably accessible software under the umbrella of the Next Generation Internet initiative of the European Commission.
