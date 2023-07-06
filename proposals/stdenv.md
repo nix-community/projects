@@ -200,22 +200,27 @@ Total: 136 person days, 85 520 EUR
 
 ### Summary
 
-214 person days, 152 720 EUR
+Total: 214 person days, 152 720 EUR
 
 Explanation:
 Based on experience we plan enough time for reviews on technical design, implementations, and editorial work.
+In particular, we plan budget to secure time from maintainers of individual components in order to make sure that we get timely reviews and our changes to documentation are correct.
 This is incorporated in the calculation.
 We assume software developer rates also for most editorial work, as editing the documentation content requires specific expertise, and those knowledgable in our problem domains are usually employed at consultancies.
 
+To validate that the work done indeed constitutes improvements, we will run another usability study to follow up on [an initial assessment of documentation quality from 2022](https://discourse.nixos.org/t/usability-studies/21404).
+
 ## Describe your relationship to the maintainers of this technology. Are you yourself the maintainer? Do they know you plan to do this work and do they support it? Please tell us more about how you obtained their support and how you plan to work together to make sure your contributions are accepted.
 
-This project proposal was developed and written collaboratively by the Nix documentation team, which is responsible for all official Nix documentation (but due to resource constraints only maintaining a small part of it in practice).
+This project proposal was developed and written collaboratively by the Nix documentation team, which is responsible for all official Nix documentation, and will lead and coordinate the activities proposed here.
+
 I am founding member and current lead of the documentation team, and also participate in the Nix maintainers team.
 The problems outlined here are well known to all maintainers, and solutions have been discussed in the past and up to recently without action.
 Fundraising activities are agreed upon and welcomed.
 
-Preprations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4).
+Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4), with support of the NixOS Foundation board:
 
-Some Nix maintainers are also on the NixOS Foundation board, who is in general support of fundraising for development activities.
-I am also contracting for the NixOS Foundation to help with project management.
-Maintainers and board members are invested in the project through the companies they run or work for, so collaboration can be expected to continue indefinitely.
+> While the NixOS Foundation board is not involved in technical decisions in the Nix ecosystem, we strongly support these proposed efforts to solve long-standing issues and trust the authors of these proposals to implement them as described.
+> We are convinced that succeeding with these projects will enable more reliable software infrastructure and support its long-term maintenance both in the Nix ecosystem as well as for projects relying on it.
+>
+> — NixOS Foundation board
