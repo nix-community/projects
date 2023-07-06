@@ -168,8 +168,8 @@ We identified changes that will have lasting effect after the project is finishe
 - Provide infrastructure for auto-testing code samples (5w, 20 000 EUR)
 - Add markup support for glossary terms (1d, 800 EUR)
 - Preprocess manual output for styling and design new style sheet (3w, 12 000 EUR)
-- Preview deployments of pull requests (1d, 800 EUR)
-- Live-preview of changes (2d, 1 600 EUR)
+- Preview deployments of pull requests to the manual (1d, 800 EUR)
+- Live-preview of local changes (2d, 1 600 EUR)
 
 Total: 81 person days, 67 200 EUR
 
@@ -177,7 +177,7 @@ Total: 81 person days, 67 200 EUR
 
 - Rework the introduction and overview section to match contents and capabilities of the Nixpkgs manual (3d, 2 400 EUR)
 - Make the "Specifying Dependencies" section beginner-friendly (3w, 12 000 EUR)
-- Fold module system documentation in one chapter (2d, 1 600 EUR)
+- Fold module system documentation into one chapter (2d, 1 600 EUR)
 - Make the introduction to the module system beginner-friendly (2w, 8 000 EUR)
 - Remove references to `nix-env` (2d, 1 600 EUR)
 - Remove references to NixOS configurations (1d, 800 EUR)
