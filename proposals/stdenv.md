@@ -99,7 +99,7 @@ While the mentioned chapters in the Nixpkgs manual are central to the entire eco
 Most importantly, this part of documentation is **effectively unmaintained** as currently no one has the resources to take ownership due to its enormous size.
 
 Nixpkgs is a large software project, and one of the largest public GitHub repositories.
-The code itself originated from research projects in [2004](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi5o8mAwOn_AhWBS_EDHRolCnQQFnoECA4QAQ&url=https%3A%2F%2Fedolstra.github.io%2Fpubs%2Fnspfssd-lisa2004-final.pdf&usg=AOvVaw10O4UewT2sh6kUSXYR3jNC&opi=89978449) and [2006](https://nixos.org/docs/SCR-2005-091.pdf), and albeit always serving its purpose, for various reasons has grown without clear direction since and saw, at best, sparse efforts to provide approachable documentation.
+The code itself originated from research projects in [2004](https://edolstra.github.io/pubs/nspfssd-lisa2004-final.pdf) and [2006](https://nixos.org/docs/SCR-2005-091.pdf), and albeit always serving its purpose, for various reasons has grown without clear direction since and saw, at best, sparse efforts to provide approachable documentation.
 The documentation team is now at a crucial point where we have built up enough capacity, expertise, and community support to tackle the skill-based problem of producing correct and helpful documentation and presenting it in appropriate locations;
 we also have built up enough organisational structures and routines to deal with the coordination problem of incrementally reorganising a large information system in a division of labor.
 
