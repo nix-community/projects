@@ -35,7 +35,7 @@ Dependencies:
 
 - Various C++ compilers
 - Bash
-- Curl
+- cURL
 - OpenSSL
 - Various GNU projects
 - Rust
@@ -66,7 +66,7 @@ Better reference documentation of Nixpkgs build tooling can be expected to also 
 ## How are decisions regarding this technology’s development made? Please describe the project’s governance model.
 
 Individuals and loosely organised contributor or maintainer teams review each other’s work and discuss technical decisions in public.
-Despite the principal author technically being a BDFL, there are only weak and implicit power structures that are largely centered around demonstrated achievements, and decisions largely are based on technical merit as judged by those involved.
+Despite the principal author technically being a [BDFL](https://en.wikipedia.org/wiki/Benevolent_dictator_for_life), there are only weak and implicit power structures that are largely centered around demonstrated achievements, and decisions largely are based on technical merit as judged by those involved.
 
 Self-organised formal [community teams](https://nixos.org/community/#governance-teams) take responsibility for maintaining code in their areas of expertise, and have a more formal communication and permission structure.
 Otherwise, apart from more regular activity, they operate just like any other group of contributors.
@@ -75,6 +75,8 @@ Ecosystem-wide technical decisions are negotiated in an [RFC process](https://gi
 
 The NixOS Foundation mainly ensures funding for critical assets such as the binary cache, manages permissions in the GitHub organisation, and facilitates community activities.
 The Foundation board as a legal entity is not involved in technical decisions.
+
+Project governance has immensely gained in structure lately: In the past year, four of the eleven currently active community teams were formed, the NixOS Foundation board was restructured, and there exist plans for setting up paid support functions to ensure continued operations.
 
 ## How does this project handle security risks? Are there policies, procedures, or tools in place to minimize the introduction of vulnerabilities or undesired contributions?
 
