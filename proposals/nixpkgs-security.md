@@ -72,7 +72,7 @@ This will enable projects that build and run with Nix today to continue working 
 ## How are decisions regarding this technology’s development made? Please describe the project’s governance model.
 
 Individuals and loosely organised contributor or maintainer teams review each other’s work and discuss technical decisions in public.
-Despite the principal author technically being a BDFL for Nix (the package manager), there are only weak and implicit power structures that are largely centered around demonstrated achievements, and decisions largely are based on technical merit as judged by those involved.
+Despite the principal author technically being a [BDFL](https://en.wikipedia.org/wiki/Benevolent_dictator_for_life), there are only weak and implicit power structures that are largely centered around demonstrated achievements, and decisions largely are based on technical merit as judged by those involved.
 We proudly cultivate a vibrant and growing community of contributors, as demontrated by Nixpkgs being one of the most active projects on GitHub.
 
 Self-organised formal [community teams](https://nixos.org/community/#governance-teams) take responsibility for maintaining code in their areas of expertise, and have a more formal communication and permission structure.
@@ -96,25 +96,18 @@ The latter tends to critical assets, such as the build servers and the security 
 
 There are multiple attack surfaces in Nixpkgs:
 
-1. Authenticating sources and ensuring we package software from trusted sources: not all upstreams have a signing infrastructure and publish signed tarballs. Our system is able to secure even non-HTTPS sources by validating their content hash.
-2. Validating that upstream projects are in good health and not jeopardized: we confirmed our ability as a community to do this multiple times, for example in the various Minecraft launcher incidents in the past leading to multiple forks.
-3. Tarballs can exploit vulnerable code in our decompressor. We already apply defense in depth to ensure we limit the blast radius, but we can go much further and completely restrain the capabilities of our decompressors while pushing for adopting more memory-safe decompressors. The same applies for any tool to fetch sources, like Git or Mercurial.
-4. Backdooring attempts to ship innocent updates with hidden payloads can happen, like with the Linux kernel, systemd or any open source project. Our code review system will usually thwart attempts at this as long as source validation is honored. Still, sophisticated attacks can be mounted with long-term covert operations against the repository by crafting virtual identities, manipulated by the same rogue entity. Those attacks can only be mitigated by pushing for more and more defense in depths measures like we do with systemd hardening and hardening of our software by default (via compiler flags).
+1. Authenticating sources: not all upstreams sign their code. Our system is able to sources by validating their content hash.
+2. Vetting upstream projects: we confirmed our ability as a community to identify at-risk upstream projects.
+3. Tarballs can exploit vulnerable code in our decompressor. The same applies for any tool to fetch sources.
+4. Adversarial contributions: Our code review system will usually thwart attempts at this as long as source validation is honored. Dedicated actors could still mount long-term sophisticated attacks.
 
-In Nixpkgs, there are two big families of software: packages that are depended upon by many others (*core packages*), and packages that are leaves in the dependency graphs (*leaf packages*).
+Core packages, whire are depended upon by many others, usually have clear ownership structures where it is expected to wait for maintainers' approval before merging a change.
 
-The first has subfamilies depending on the importance of the package.
-For example, some are C libraries – very critical for any kind of software – while another may be geospatial Python dependencies, critical only for the geospatial software ecosystem.
-There are usually clear ownership structures (using GitHub's `CODEOWNERS` file), where it is expected to wait for maintainers' approval befor merging a change.
-
-The second can be all sorts of ad-hoc software leveraging dependencies already present in Nixpkgs.
-These packages are much more prone to the full attack surface it's usually hard to find a contributor with the necessary domain expertise on that leaf package.
+Packages at the leaves of the dependency graph are more vulnerable, as it's usually hard to find contributors with the necessary expertise.
 This tends to encourage courtesy approvals by maintainers who are otherwise not involved.
 
-Different components have different ownership structures.
-In Nixpkgs, process improvements are constantly being discussed in order to establish a mutual understanding of the roles and expectations of committers.
-For Nix itself, only maintainers have write access, and only the principal author can publish releases.
-Nixpkgs and NixOS have a much broader committer community with largely implicit rules.
+Process improvements are constantly being discussed in order to establish a mutual understanding of the roles and expectations of committers.
+Still, in Nixpkgs and NixOS the committer community follows largely implicit rules.
 There is a high degree of social trust involved, and active developers and maintainers, while culturally and geographically diverse, usually have ongoing working relationships marked by diligent reviews and critical discussions.
 
 ## How will you address the challenge described? Give an overview of your work and why it is significant, specifically addressing the challenge. Explain what the field will learn from your proposed work and how it contributes to the long-term sustainability of the technology.
