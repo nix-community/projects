@@ -151,7 +151,7 @@ Making Nix and Nixpkgs more approachable and easier to use will also make it mor
 
 ## How will you accomplish the work? Please provide a list of deliverables with associated effort and cost of each deliverable.
 
-Goals: Identify changes that have lasting effect after the project is finished.
+We identified changes that will have lasting effect after the project is finished.
 
 #### Technical
 
