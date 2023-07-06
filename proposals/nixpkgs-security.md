@@ -7,7 +7,7 @@ It is the basis of an ecosystem of exceptionally powerful tools – including Ni
 For its proponents, Nix embodies technology sovereignty.
 It is leveraged and relied upon by computer enthusiasts, professionals, and organisations who recognise its value for all steps in the software development lifecycle.
 
-Nixpkgs is the largest software collection in existence, at the time of writing, totaling more than 85 000 of packages according to [Repology](https://repology.org/repository/nix_unstable).
+At the time of writing, Nixpkgs offers more than 85 000 packages according to [Repology](https://repology.org/repository/nix_unstable).
 It does this by encapsulating various software ecosystems such as [Python, Rust, Node.js, and more](https://nixos.org/manual/nixpkgs/unstable/#chap-language-support).
 As a result, Nixpkgs is a valuable security target with a far reach, and we would like to address three aspects of it:
 
@@ -119,9 +119,7 @@ Here, we focus on reducing our reliance on foreign binaries to recompile Nixpkgs
 Each of these three items contributes to fundamental security hardening measures, and aims to protect Nixpkgs against a class of vulnerabilities.
 We will express the significance in matters of "what would success look like".
 
-More precisely:
-
-A security team usually provides automation for itself, maintainers, and end users:
+More precisely, a security team usually provides automation for itself, maintainers, and end users:
 
 - Triaging interface for marking vulnerabilities
 - Monitoring the build and distribution pipeline to notify users or alert the security team
@@ -148,7 +146,7 @@ The next stage after Secure Boot is to have measured boot, which is the final pi
 As a result of this project, NixOS will be able to boot with:
 
 1. UEFI Secure Boot with user-owned keys or MSFT-backed key infrastructure via shim
-2. Key storage scured through a Hardware Security Module (HSM) or similar hardware token as long as it is supported by PKCS#7 standards. Nitrokey will have a special emphasis as it is a mature, open hardware, affordable HSM product
+2. Key storage scured through a Hardware Security Module (HSM) or similar hardware token as long as it is supported by [PKCS#7](https://en.wikipedia.org/wiki/PKCS_7) standards. Nitrokey will have a special emphasis as it is a mature, open hardware, affordable HSM product
 
 Also, NixOS will be able to be deployed in situations where:
 
@@ -164,12 +162,12 @@ This will also unlock our long-term goal to find ever shorter bootstrapping chai
 
 In all security areas we presented, most of our work will be both reusable component-wise as well as available as a whole "off the shelf".
 Having a complete integration of the various techniques and tools will provide a unique opportunity for any software developer to inspect and work with our solution.
-By offering a sufficiently transparent setup in a highly visible project such as NixOS, we intend to provide learning opportunities for motivated people.
+By offering a sufficiently transparent setup in a highly visible project such as NixOS, we intend to provide learning opportunities and practical samples for security researchers.
 
 ### How our work will contribute to sustainability of Nix, the Nix ecosystem, and FOSS more generally
 
 Introducing the mentioned security projects as dependencies to Nixpkgs will raise awareness of security concerns, and direct the Nix community's attention to those upstream projects.
-This is likely to translate into additiodevelopment and maintenance capacity these projects would benefit from.
+This is likely to translate into additional development and maintenance capacity these projects would benefit from.
 
 Similarly, the security tracker will serve as a central place for building and sharing organisational knowledge around security considerations.
 We expect this to be a first point of contact for potential contributors.
@@ -178,21 +176,21 @@ We expect this to be a first point of contact for potential contributors.
 
 ### Boot chain security
 
-- Introduce preparatory upstream features: (4w, 20 000 EUR).
-- Produce NixOS's default UEFI Secure Boot images with `shim` and `shim-review`: (4w, 20 000 EUR) (*)
-- Write a NixOS RFC "Bootspec v2" and provide an initial working implementation: 2w, 8 000 EUR)
-- Add TPM2 support to Lanzaboote: (4w, 20 000 EUR)
-- Safe updates (A/B schemas) in NixOS with `systemd-boot`: (2w, 10 000 EUR)
-- Integrity checks for the Nix store (`*-verity`): (4w, 20 000 EUR)
-- Integration: Provide a minimal hardened NixOS configuration stripped of interpreters: (4w, 20 000 EUR).
+- Introduce preparatory upstream features (4w, 20 000 EUR)
+- Produce NixOS's default UEFI Secure Boot images with `shim` and `shim-review` (4w, 20 000 EUR) (\*)
+- Write a NixOS RFC "Bootspec v2" and provide an initial working implementation (2w, 8 000 EUR)
+- Add TPM2 support to Lanzaboote (4w, 20 000 EUR)
+- Safe updates (A/B schemas) in NixOS with `systemd-boot` (2w, 10 000 EUR)
+- Integrity checks for the Nix store (`*-verity`) (4w, 20 000 EUR)
+- Integration: Provide a minimal hardened NixOS configuration stripped of interpreters (4w, 20 000 EUR).
 
 Total: 120 person days, 118 000 EUR.
 
-(*) This is dependent on the [shim-review project](https://github.com/rhboot/shim-review) owners to accept our application.
+(\*) This is dependent on the [shim-review project](https://github.com/rhboot/shim-review) owners to accept our application.
 
 ### Security tracker
 
-- Web service scaffholding and core features: APIs & vuln. tracker ingestion (3w, 12 000 EUR)
+- Web service scaffolding and core features: APIs & vuln. tracker ingestion (3w, 12 000 EUR)
     - architecture, structure, testing, packaging, deployment
 - [`label-tracker`](https://git.eno.space/label-tracker.git/) integration and improvements (2w, 8 000 EUR)
 - User story "Security team" (2w, 8 000 EUR)
@@ -206,15 +204,15 @@ Total: 120 person days, 118 000 EUR.
 
 Total: 75 person days, 60 000 EUR
 
-Explanation:
+#### Explanation
 
-The working mode we envision is having a strong web developer with extensive Nix experience developing a reusable high-standard platform with maintenance in mind, i.e. end-to-end testing, etc, with enough flexibility to be reused by similar Linux distributions, e.g. Guix.
+The working mode we envision is having the support of a strong web developer with extensive Nix experience developing a reusable high-standard platform with maintenance in mind, i.e. end-to-end testing, etc, with enough flexibility to be reused by similar Linux distributions, e.g. Guix.
 
 We decided to split the work into 3 "big milestones" or "target goals", aiming to make the platform usable for the given target audience.
 Each milestone involves developing specific features and requires close collaboration with the target audience to ensure we satisfy their needs, following UX/UI research methods and best practices.
 Each phase includes a user discovery part and a development part; user discovery can be performed asynchronously in some situations to improve the velocity.
 
-[`label-tracker`] is an important piece of the puzzle for end-users to benefit from the integration of NixOS, our Git repositories, and our channels to answer non-trivial questions like "Is this PR in my distribution channel?" or "When is this PR expected to land in my distribution channel?".
+[`label-tracker`](https://git.eno.space/label-tracker.git/) is an important piece of the puzzle for end-users to benefit from the integration of NixOS, our Git repositories, and our channels to answer non-trivial questions like "Is this PR in my distribution channel?" or "When is this PR expected to land in my distribution channel?".
 Those improvements can include performance work, scaling up the infrastructure to make it an asset in the Nix community available to everyone.
 
 ### Bootstrapping Nixpkgs
@@ -224,7 +222,7 @@ Those improvements can include performance work, scaling up the infrastructure t
 - Prototyping bootstrapping of additional programming languages, e.g. Rust, Go. 4w, 16 000 EUR
 - Total: 60 person days, 48 000 EUR
 
-Explaination:
+#### Explanation
 
 The first deliverable [stage0-posix](https://github.com/oriansj/stage0-posix) requires modification of the [Nixpkgs standard environment](https://nixos.org/manual/nixpkgs/unstable/#part-stdenv).
 This is surgical work to avoid breaking things and introducing significant regressions while not disturbing the work of the others by introducing very long recompile times.
@@ -255,10 +253,9 @@ He also coordinated the disclosure in the [NixOS Graphical Installer vulnerabili
 
 Ryan works closely with the security team and is familiar with their challenges, and will lead the work on on the security tracker and secure boot deliverables.
 The security team expressedly welcomes the contributions outlined in this proposal.
+He is one of the maintainers of [lanzaboote](https://github.com/nix-community/lanzaboote), and collaborates with systemd maintainers on bringing powerful primitives for every Linux distribution which would enable lanzaboote and NixOS to reuse upstream primitives directly.
 
-Ryan is one of the maintainers of [lanzaboote](https://github.com/nix-community/lanzaboote), and collaborates with systemd maintainers on bringing powerful primitives for every Linux distribution which would enable lanzaboote and NixOS to reuse upstream primitives directly.
-
-The bootstrapping work will be led by Emily Trau who kickstarted the [minimal bootstrap project](https://github.com/NixOS/nixpkgs/pull/232329) and is involved in the bootstrap community that also delivered the [Guix full-source bootstrap](https://guix.gnu.org/blog/2023/the-full-source-bootstrap-building-from-source-all-the-way-down/).
+The bootstrapping work will be led by Emily Trau who kickstarted the [minimal bootstrap project](https://github.com/NixOS/nixpkgs/pull/232329) and is involved in the community that delivered the [Guix full-source bootstrap](https://guix.gnu.org/blog/2023/the-full-source-bootstrap-building-from-source-all-the-way-down/).
 
 Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4), with support of the NixOS Foundation board:
 
