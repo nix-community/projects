@@ -155,6 +155,7 @@ That would reduce maintainers’ work load and contribute to making the maintain
 - Inventorise and document the intent of existing tests (2w, 8 000 EUR)
 - Set up CI to report on test coverage (2w, 8 000 EUR)
 - Split out `libstore` to be self-contained (3w, 12 000 EUR)
+- Improve factoring and in-code documentation (4w, 16 000 EUR)
 - Provide a separate installer (3w, 12 000 EUR)
 - Rework the documentation infrastructure to produce a separate reference manual (3w, 12 000 EUR)
 - Add C bindings to the store API (3w, 12 000 EUR)
@@ -172,8 +173,9 @@ That would reduce maintainers’ work load and contribute to making the maintain
 - Add a Nix store backend to [Haskell Cabal](https://hackage.haskell.org/package/Cabal) as a demonstrator (4w, 16 000 EUR)
 - Administrative support (8000 EUR)
 
-Explanation: 240 person days, 200 000 EUR
+Total: 260 person days, 216 000 EUR
 
+Explanation:
 The working mode we envision based on experience is to allocate a significant portion of time for reviews – for code quality and consistency, as a vehicle for knowledge sharing, and to ensure high standards for documentation.
 This is incorporated in the estimates.
 
