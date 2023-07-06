@@ -24,7 +24,7 @@ In short, Nix reduces the global cost of software production and long-term use b
 
 ## Please provide a brief overview over your project’s dependencies, including your own dependencies and projects that rely on your technology.
 
-Bootstrapping Nixpkgs is all about *reducing dependencies*, but this effort builds on top of the work of [stage0-posix](https://github.com/oriansj/stage0-posix) and [GNU Mes](https://www.gnu.org/software/mes/), which form our trustad minimal bootstrapping chain.
+Bootstrapping Nixpkgs is all about *reducing dependencies*, but this effort builds on top of the work of [stage0-posix](https://github.com/oriansj/stage0-posix) and [GNU Mes](https://www.gnu.org/software/mes/), which form our trusted minimal bootstrapping chain.
 
 Early boot security is an initiative in collaboration with the [UAPI group](https://github.com/orgs/uapi-group/) formed by Linux distribution developers, which NixOS is a member of.
 UEFI is another important piece of the puzzle, but one we depend on in a modular fashion, and we could replace it. An interesting example in the Nix community is [OwnerBoot](https://sr.ht/~amjoseph/ownerboot/), a completely "user-owned" boot chain leveraging [Coreboot](https://www.coreboot.org/) and [LinuxBoot](https://www.linuxboot.org/) which completely replaces UEFI. Finally, most, if not all, of the software is developed in the [Rust programming language](https://www.rust-lang.org/), known for safe low-level programming, with excellent UEFI support.
@@ -138,137 +138,105 @@ Also, NixOS will be able to be deployed in situations where:
 
 A complete bootstrapping toolchain will for the first time make possible to inspect our complete build graph down to a piece of foundational machine code that is small enough to be audited manually. More importantly, it will allow us to automatically ensure the absolute integrity of our entire software supply chain, and that all build artefacts correspond to their source code. This will also unlock our long-term goal to find ever shorter bootstrapping chains in order to reduce our reliance on massive amounts of historical source code, auditing which is intractable.
 
-
-
 ### What the field will learn from our work
 
-Nix puts forward a unique (indeed, we claim, revolutionary) approach to software development to begin with. One can argue that it is still somewhat obscured for various reasons, and one of them is that the core mechanisms are hidden away as an implementation detail.
-
-Clarifying concepts by formalising and documenting interfaces would enable others to build on top of, reimplement, or innovate over what Nix has to offer, and help spread its ideas beyond the currently entrenched but limited notion of a package manager and beyond the particular implementation angle the Nix ecosystem has taken.
-
-Furthermore, in all security areas we presented, most of our work is reusable and is reused or we are reusing other Linux distribution works, this is all part of a circuit where we share and we aim to do even better by abstracting what we produce as much as possible to offer it "on the shelf".
-
-share experience and encoded knowledge to promote the wider use of this ability of introspection
+In all security areas we presented, most of our work will be both reusable component-wise as well as available as a whole "off the shelf".
+Having a complete integration of the various techniques and tools will provide a unique opportunity for any software developer to inspect and work with our solution. By offering a sufficiently transparent setup in a highly visible project such as NixOS, we intend to provide learning opportunities for motivated people.
 
 ### How our work will contribute to sustainability of Nix, the Nix ecosystem, and FOSS more generally
 
-Depending on the mentioned pieces will provide developer force from Nixpkgs to those upstream projects, providing maintenance and improvements.
+Introducing the mentioned security projects as dependencies to Nixpkgs will raise awareness of security concerns, and direct the Nix community's attention to those upstream projects.
+This is likely to translate into additiodevelopment and maintenance capacity these projects would benefit from.
 
-Furthermore, the security tracker will serve as a sustainability platform regarding security responses across all Nixpkgs and can also be reused for derivatives of Nixpkgs.
+Similarly, the security tracker will serve as a central place for building and sharing organisational knowledge around security considerations.
+We expect this to be a first point of contact for potential contributors.
 
 ## How will you accomplish the work? Please provide a list of deliverables with associated effort and cost of each deliverable.
 
 ### Boot chain security
 
-For the boot security chain, here is the list of deliverables:
+- Introduce preparatory upstream features: (4w, 20 000 EUR).
+- Produce NixOS's default UEFI Secure Boot images with `shim` and `shim-review`: (4w, 20 000 EUR) (*)
+- Write a NixOS RFC "Bootspec v2" and provide an initial working implementation: 2w, 8 000 EUR)
+- Add TPM2 support to Lanzaboote: (4w, 20 000 EUR)
+- Safe updates (A/B schemas) in NixOS with `systemd-boot`: (2w, 10 000 EUR)
+- Integrity checks for the Nix store (`*-verity`): (4w, 20 000 EUR)
+- Integration: Provide a minimal hardened NixOS configuration stripped of interpreters: (4w, 20 000 EUR).
 
-- [ ] Preparatory fundamental upstream features (systemd and more): 4w, 10K EUR.
-- [ ] NixOS's default UEFI Secure Boot images via shim and shim-review: 4w, 10K EUR (*)
-- [ ] Kickstarting the NixOS RFC "Bootspec v2" and having an initial working implementation: 2w, 4K EUR
-- [ ] Lanzaboote and TPM2: 4w, 10K EUR
-- [ ] Safe updates (A/B schemas) in NixOS with systemd-boot: 2w, 5K EUR
-- [ ] Safe Nix store via integrity techniques (*-verity): 4w, 10K EUR
-- [ ] Safe NixOS via maximal reduction of attack surface through open interpreters: 4w, 10K EUR.
-- Total: 59K EUR.
+Total: 120 person days, 118 000 EUR.
 
 (*) This is dependent on the [shim-review project](https://github.com/rhboot/shim-review) owners to accept our application.
 
-Explaination:
-
-In order to make many of those features a stable and reliable reality, some work has to be done upstream
-which will benefit the whole ecosystem and community and show the talent and expertise of our ecosystem.
-
-Then, a lot of work would be performed in parallel via lanzaboote maintainers
-but new developers who joined the project because they were seduced in the value proposition of combining NixOS and those features.
-
-Because this work is particularly low-level and difficult, those rates are a minimum for the quality standards we set in nixpkgs,
-it will probably entail many back'n'forth with UEFI ecosystem libraries in Rust as this is the tool of choice for
-the development of our tools.
-
-Finally, the last three points enable NixOS as, what we call, an "appliance operating system", that is, a highly-secure and locked-down
-deployment of NixOS in the field, e.g. Internet of Things, application servers, where upgrades can only be performed by replacing
-completely the whole system, in a safe way supporting safe rollbacks in case of failed upgrades but not supporting arbitrary
-downgrades to vulnerable versions. We would also aim to remove any potential "bugdoors", be it a Python interpreter which can run
-arbitrary Python code which are contained in NixOS for early boot due to flexibility and simplicity of the build story.
-
 ### Security tracker
 
-- [ ] Web service scaffholding (architecture, structure, testing, packaging, deployment) and core features: APIs & ingesting (3w, 10K EUR)
-- [ ] [label-tracker](https://git.eno.space/label-tracker.git/) integration and improvements (2w, 5K EUR)
-- [ ] User story "Security team" work (2w, 5K EUR): filtering, triaging, generating advisories, linking metadata
-- [ ] User story "Maintainer" work (3w, 5K EUR): assisting security team, processing their own software, validating/participating, automation for PRs (bump, backport, mark EOL/vulnerable)
-- [ ] User story "End-user" work (2w, 5K EUR): receiving data about the current security story of a release, subscribing to security updates for a release, various APIs to reuse alerting, open data and exports
+- Web service scaffholding and core features: APIs & vuln. tracker ingestion (3w, 12 000 EUR)
+    - architecture, structure, testing, packaging, deployment
+- [`label-tracker`](https://git.eno.space/label-tracker.git/) integration and improvements (2w, 8 000 EUR)
+- User story "Security team" (2w, 8 000 EUR)
+    - filtering, triaging, generating advisories, linking metadata
+- User story "Maintainers" (3w, 12 000 EUR)
+    - assisting security team by auditing their tools, validating their workflows, introducing automation for their PRs (bump, backport, mark EOL/vulnerable)
+- User story "End-user" (5w, 20 000 EUR)
+    - gathering information about the current security properties of a release
+    - subscribing to the security tracker for a release's security updates
+    - various APIs to reuse alerting, open data, exports
 
-- Total: 30K EUR
+Total: 75 person days, 60 000 EUR
+
+Explanation: 
+
+The working mode we envision is having a strong web developer with extensive Nix experience developing a reusable high-standard platform with maintenance in mind, i.e. end-to-end testing, etc, with enough flexibility to be reused by similar Linux distributions, e.g. Guix.
+
+We decided to split the work into 3 "big milestones" or "target goals", aiming to make the platform usable for the given target audience.
+Each milestone involves developing specific features and requires close collaboration with the target audience to ensure we satisfy their needs, following UX/UI research methods and best practices.
+Each phase includes a user discovery part and a development part; user discovery can be performed asynchronously in some situations to improve the velocity.
+
+[`label-tracker`] is an important piece of the puzzle for end-users to benefit from the integration of NixOS, our Git repositories, and our channels to answer non-trivial questions like "Is this PR in my distribution channel?" or "When is this PR expected to land in my distribution channel?". Those improvements can include performance work, scaling up the infrastructure to make it an asset in the Nix community available to everyone.
+
+### Bootstrapping Nixpkgs
+
+- Develop the Nixpkgs C/C++ bootstrap chain with [stage0-posix](https://github.com/oriansj/stage0-posix): 4w, 16 000 EUR
+- Reviews, testing, infrastructure setup and maintenance: during the whole project, 4w, 16 000 EUR
+- Prototyping bootstrapping of additional programming languages, e.g. Rust, Go. 4w, 16 000 EUR
+- Total: 60 person days, 48 000 EUR
 
 Explaination:
 
-The working mode we envision is a strong web developer with extensive Nix experience developing a reusable high standard platform with
-maintenance in mind, i.e. end to end testing, etc, which has a slight amount of flexibility to be reused for similar Linux distributions, e.g. Guix.
+The first deliverable [stage0-posix](https://github.com/oriansj/stage0-posix) requires modification of the [Nixpkgs standard environment](https://nixos.org/manual/nixpkgs/unstable/#part-stdenv).
+This is surgical work to avoid breaking things and introducing significant regressions while not disturbing the work of the others by introducing very long recompile times.
 
-We decide to split the work in 3 "big milestones" or "target goals" under the User story item where we want the platform to be usable and acceptable for that target audience, i.e. security team, maintainers and end-users, each phase comes with its lots of features and should work closely with the target audience to ensure we build something of use to that particular audience on the basis of UX/UI research methods. Each phase includes a user discovery part and a development part, user discovery can be performed asynchronously in some situations to improve the velocity.
+Moreover, review and testing is particularly important here, as Nixpkgs maintainers usually have their own domain expertise specific to some part of the standard environment.
+Improving tooling support and processes for work on those pieces is also important for long-term maintenance.
 
-Label tracker is an important piece of the puzzle for end-users as a technical API for untangling the complicated relations with the large continuous integration of NixOS, our Git repositories, our channels to answer non-trivial questions like "Is this PR in my distribution channel?" or "When is this PR expected to land in my distribution channel?" so we can depend critically on it, those improvements can include performance work, scaling up the infrastructure to be a common good in the Nix community open to everyone.
+Finally, currently, most of Nixpkgs is bootstrapped with C programs and Bash scripts.
+Future exploration of alternative programming languages for that task will require the capability to bootstrap those programming languages.
 
-### Bootstrapping nixpkgs
+### Summary
 
-For bootstrapping:
-
-- Bootstrap chain development in nixpkgs with [stage0-posix](): 4w, 10K EUR
-- Development review, testing, side-development in infrastructure/maintenance: during the whole project, 5K EUR
-- Exploring the bootstrapping of alternative programming languages, e.g. Rust, Go. 4w, 10K EUR
-- Total: 25K EUR
-
-Explaination:
-
-The working mode we envision is packaging [stage0-posix]() in nixpkgs which involves touching a core and fundamental part of Nixpkgs: the standard environment.
-
-This is chirurgical work to avoid breaking things and introducing significant regressions while not disturbing the work of the others by introducing very long recompile time.
-
-Moreover, review and testing is significant and important here as everyone has their own domain expertise on each piece of standard environment, having tooling or building better tools to work on those pieces is also important for long run maintenance.
-
-Finally, currently, most of Nixpkgs is bootstrapped by using C programs and Bash scripts, exploring alternative programming languages for those usecases requires the capability to bootstrap those very same programming languages, it would be interesting to see in which capacity it is now possible to bootstrap Rust using [mrustc](https://github.com/thepowersgang/mrustc) project, for example, making those languages interesting alternative.
-
----
-
-Overall, Nix maintainers essentially have to buy their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding. Therefore we have to assume consultancy rates to be able to keep to the time frame, with the option to trade budget for velocity to some extent.
+Overall, Nix maintainers essentially have to dedicate their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding. Therefore we have to assume consultancy rates to be able to keep to the time frame, with the option to trade budget for velocity to some extent.
 
 We expect multiple contributors to work in parallel where possible.
 
-Total: 114K EUR.
+Total: 226 000 EUR.
 
 ## Describe your relationship to the maintainers of this technology. Are you yourself the maintainer? Do they know you plan to do this work and do they support it? Please tell us more about how you obtained their support and how you plan to work together to make sure your contributions are accepted.
 
+I assisted Ryan Lahfa and Emily Trau with developing this proposal. 
 
-I am not part of [security team](https://nixos.org/community/teams/security.html), but I am [contributor](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+author%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed) and [reviewer of security fixes](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+reviewed-by%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed+) in nixpkgs in critical software.
-and I am the [current release manager of NixOS](https://nixos.org/community/teams/nixos-release.html) and released NixOS 23.05, I had to deal with [Node.js](https://github.com/NixOS/nixpkgs/pull/233399) and [OpenSSL](https://github.com/NixOS/nixpkgs/pull/231899) [end of life status](https://github.com/NixOS/nixpkgs/pull/233024)
-and offers non-bumpy upgrades paths to all our users out there. I am familiar with the challenges of the security team
-as I worked on providing RSS feeds in [pr-tracker](https://git.qyliss.net/pr-tracker) a tracker of "when my PR is in some Nixpkgs channel", discovered [label-tracker](https://git.eno.space/label-tracker.git/)
-which offers this solution for security updates.
+Ryan Lahfa is a [Nixpkgs security contributor](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+author%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed) and [reviewer of security fixes](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+reviewed-by%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed+), the [current release manager of NixOS](https://nixos.org/community/teams/nixos-release.html), and oversaw the release of NixOS 23.05.
 
-I coordinated the disclosure in the [NixOS Graphical Installer vulnerability](https://github.com/NixOS/calamares-nixos-extensions/security/advisories/GHSA-3rvf-24q2-24ww) and am working on automatic remediation
-at early boot time to fix it.
+He coordinated handling the [end of life status](https://github.com/NixOS/nixpkgs/pull/233024) of [Node.js](https://github.com/NixOS/nixpkgs/pull/233399) and [OpenSSL](https://github.com/NixOS/nixpkgs/pull/231899) and offering smooth upgrade paths.
+He also coordinated the disclosure in the [NixOS Graphical Installer vulnerability](https://github.com/NixOS/calamares-nixos-extensions/security/advisories/GHSA-3rvf-24q2-24ww) and is working on a fix.
 
-Finally, I am in close touch with the security team and we discussed many times the need for such a feature, such a contribution would
-be very welcomed and its deployment / management could be offloaded to the [newly formed NixOS infrastructure team](https://github.com/NixOS/foundation/issues/79) which I also interact
-with.
+Ryan works closely with the security team and is familiar with their challenges, and will lead the work on on the security tracker and secure boot deliverables.
+The security team expressedly welcomes the contributions outlined in this proposal.
 
-I am part of the maintainers of [lanzaboote](https://github.com/nix-community/lanzaboote), one of the most complete UEFI Secure Boot implementation in NixOS, widely used in the NixOS community.
-I am also one of the shepherd of [the Bootspec v1 RFC](https://github.com/NixOS/rfcs/pull/125), author of [an RFC on how to bring UEFI to legacy users](https://github.com/NixOS/rfcs/pull/154) and working towards Bootspec v2.
+Ryan is one of the maintainers of [lanzaboote](https://github.com/nix-community/lanzaboote), and collaborates with systemd maintainers on bringing powerful primitives for every Linux distribution which would enable lanzaboote and NixOS to reuse upstream primitives directly.
 
-I also re-implemented most of `systemd-stub` in lanzaboote in Rust, as part of the [reimplementation proposal](https://github.com/nix-community/lanzaboote/issues/94).
+The bootstrapping work will be led by Emily Trau who kickstarted the [minimal bootstrap project](https://github.com/NixOS/nixpkgs/pull/232329) and is involved in the bootstrap community that also delivered the [Guix full-source bootstrap](https://guix.gnu.org/blog/2023/the-full-source-bootstrap-building-from-source-all-the-way-down/).
 
-Finally, I work with systemd in bringing powerful primitives for every Linux distribution which would enable lanzaboote and NixOS
-to reuse upstream primitives directly: see [systemd#28057](https://github.com/systemd/systemd/pull/28057), [systemd#28070](https://github.com/systemd/systemd/pull/28070) for some examples.
+Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4), with support of the NixOS Foundation board:
 
-For the last years, we discussed most of the controversial contents with upstreams, especially systemd, and we are now in a state where
-we believe to have a consensual path forward to obtain a fully integrated vision encompassing Linux kernel, systemd and NixOS.
-
-Discussion about "the next steps" of lanzaboote have been discussed all the time and we have users asking more and more of that now that UEFI Secure Boot is easy to achieve.
-
-Finally, for bootstrapping, the work will be handled by Emily Trau who kickstarted the minimal bootstrap project here: <https://github.com/NixOS/nixpkgs/pull/232329> and is involved in the bootstrap community, it is already being reviewed and improved by the low-level community in Nixpkgs.
-
-Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4).
-
-We plan to follow our established routine to review and merge contributions in nixpkgs.
-
+> While the NixOS Foundation board is not involved in technical decisions in the Nix ecosystem, we strongly support these proposed efforts to solve long-standing issues and trust the authors of these proposals to implement them as described. We are convinced that succeeding with these projects will enable more reliable software infrastructure and support its long-term maintenance both in the Nix ecosystem as well as for projects relying on it.
+>
+> — NixOS Foundation board
