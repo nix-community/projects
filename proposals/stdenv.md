@@ -187,7 +187,7 @@ Total: 81 person days, 67 200 EUR
 - Define uniform formatting of listings and examples in the contributor's guide (2d, 1 600 EUR)
 - Crowd sourcing tasks (done in parallel)
     - Every listing should be complete, with examples, and have an overview section highlighting the most important aspects (3w, 6 000 EUR)
-    - Check all descriptions and examples in `lib` docs for usefulness and fix up (2w, 2 000 EUR)
+    - Check all descriptions and examples in `lib` docs for usefulness and fix up (2w, 4 000 EUR)
     - Apply formatting rules (1w, 2 000 EUR)
     - Add references to glossary terms (1w, 2 000 EUR)
 - Survey and clean up the ["Hooks reference"](https://nixos.org/manual/nixpkgs/unstable/#chap-hooks) section (1w, 4 000 EUR)
@@ -196,11 +196,11 @@ Total: 81 person days, 67 200 EUR
 - Administrative support (4h/w = 64h, 5 120 EUR)
 - Development, execution, and evaluation of usability studies (100h, 6 000 EUR)
 
-Total: 136 person days, 85 520 EUR
+Total: 136 person days, 87 520 EUR
 
 ### Summary
 
-Total: 214 person days, 152 720 EUR
+Total: 214 person days, 154 720 EUR
 
 Explanation:
 Based on experience we plan enough time for reviews on technical design, implementations, and editorial work.
