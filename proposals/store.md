@@ -113,8 +113,8 @@ There is a high degree of social trust involved, and active developers and maint
 ## How will you address the challenge described? Give an overview of your work and why it is significant, specifically addressing the challenge. Explain what the field will learn from your proposed work and how it contributes to the long-term sustainability of the technology.
 
 Among Nix contributors, the C++ codebase is known to be labyrinthine.
-It has grown over 20 years after starting out as a research project and then being extended incrementally, subject to many different interests, and always under severe resource constraints.
-Yet, it supports an entire ecosystem that is quickly growing, and most its users perceive Nix itself and its development as essentially inaccessible.
+It has grown over 20 years after starting out as a research project and then being extended incrementally, subject to many different interests, and always under significant resource constraints.
+Despite supporting an entire ecosystem that is quickly growing, most its users perceive Nix itself and its development as impenetrable.
 
 Improving factoring, testing, and documentation of the Nix store, the core component, will substantially ease the contributor experience, by
 
