@@ -235,11 +235,6 @@ Future exploration of alternative programming languages for that task will requi
 
 ### Summary
 
-Overall, Nix maintainers essentially have to dedicate their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding.
-Therefore we have to assume consultancy rates to be able to keep to the time frame, with the option to trade budget for velocity to some extent.
-
-We expect multiple contributors to work in parallel where possible.
-
 Total: 226 000 EUR
 
 ## Describe your relationship to the maintainers of this technology. Are you yourself the maintainer? Do they know you plan to do this work and do they support it? Please tell us more about how you obtained their support and how you plan to work together to make sure your contributions are accepted.
