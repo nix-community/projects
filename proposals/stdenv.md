@@ -168,8 +168,10 @@ Goals: Identify changes that have lasting effect after the project is finished.
 - Provide infrastructure for auto-testing code samples (5w, 20 000 EUR)
 - Add markup support for glossary terms (1d, 800 EUR)
 - Preprocess manual output for styling and design new style sheet (3w, 12 000 EUR)
+- Preview deployments of pull requests (1d, 800 EUR)
+- Live-preview of changes (2d, 1 600 EUR)
 
-Total: 81 person days, 64 800 EUR
+Total: 81 person days, 67 200 EUR
 
 #### Editorial
 
@@ -194,11 +196,11 @@ Total: 81 person days, 64 800 EUR
 - Administrative support (4h/w = 64h, 5 120 EUR)
 - Development, execution, and evaluation of usability studies (100h, 6 000 EUR)
 
-Total: 133 person days, 85 520 EUR
+Total: 136 person days, 85 520 EUR
 
-### Total
+### Summary
 
-214 person days, 150 320 EUR
+214 person days, 152 720 EUR
 
 Explanation:
 Based on experience we plan enough time for reviews on technical design, implementations, and editorial work.
