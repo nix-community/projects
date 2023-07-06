@@ -194,7 +194,11 @@ Maintainers only have capacity to review and shepherd contributions following se
 We have explicit support by Cabal maintainers to add the Nix store backend, and the Nix community has a lot of ties and overlap with the Haskell community.
 The demonstrators and protocol implementations can live independently of the Nix codebase.
 
-Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4).
-
 We plan to follow our established routine to review and merge contributions, with three maintainers who can allocate dedicated time when paid, specialising in the store implementation and documentation, and three available in the maintainer meetings for consultation.
 Work that can get merged outside of the Nix repository can move more quickly and would be accompanied by cross-team communication efforts as needed.
+Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4), with support of the NixOS Foundation board:
+
+> While the NixOS Foundation board is not involved in technical decisions in the Nix ecosystem, we strongly support these proposed efforts to solve long-standing issues and trust the authors of these proposals to implement them as described.
+> We are convinced that succeeding with these projects will enable more reliable software infrastructure and support its long-term maintenance both in the Nix ecosystem as well as for projects relying on it.
+>
+> — NixOS Foundation board
