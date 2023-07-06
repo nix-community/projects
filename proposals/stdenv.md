@@ -127,7 +127,7 @@ Another major aspect will be technical changes addressign problems with discover
 
 The Nix documentation team has a track record of achieving substantial improvements over long stretches of time-constrained work, which we document in various reports, for example:
 
-- [This Month in Nix Docs – April 2023](https://discourse.nixos.org/t/this-month-in-nix-docs-2-april-2023/27899)
+- [This Month in Nix Docs #3 – May/June 2023](https://discourse.nixos.org/t/this-month-in-nix-docs-3-may-june-2023/29958/1)
 - [Tweag+Nix dev update #47 (also covering documentation)](https://discourse.nixos.org/t/tweag-nix-dev-update-47/27387#documentation-2)
 - [Nix team report 2022-10 — 2023-03 (also covering documentation)](https://discourse.nixos.org/t/nix-team-report-2022-10-2023-03/27486#documentation-14)
 - [Four months into the Nix Book](https://www.tweag.io/blog/2022-09-29-the-nix-book-report/)
