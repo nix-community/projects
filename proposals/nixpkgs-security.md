@@ -158,6 +158,8 @@ Furthermore, the security tracker will serve as a sustainability platform regard
 
 ## How will you accomplish the work? Please provide a list of deliverables with associated effort and cost of each deliverable.
 
+### Boot chain security
+
 For the boot security chain, here is the list of deliverables:
 
 - [ ] Preparatory fundamental upstream features (systemd and more): 4w, 10K EUR.
@@ -189,6 +191,7 @@ completely the whole system, in a safe way supporting safe rollbacks in case of 
 downgrades to vulnerable versions. We would also aim to remove any potential "bugdoors", be it a Python interpreter which can run
 arbitrary Python code which are contained in NixOS for early boot due to flexibility and simplicity of the build story.
 
+### Security tracker
 
 - [ ] Web service scaffholding (architecture, structure, testing, packaging, deployment) and core features: APIs & ingesting (3w, 10K EUR)
 - [ ] [label-tracker](https://git.eno.space/label-tracker.git/) integration and improvements (2w, 5K EUR)
@@ -207,15 +210,35 @@ We decide to split the work in 3 "big milestones" or "target goals" under the Us
 
 Label tracker is an important piece of the puzzle for end-users as a technical API for untangling the complicated relations with the large continuous integration of NixOS, our Git repositories, our channels to answer non-trivial questions like "Is this PR in my distribution channel?" or "When is this PR expected to land in my distribution channel?" so we can depend critically on it, those improvements can include performance work, scaling up the infrastructure to be a common good in the Nix community open to everyone.
 
+### Bootstrapping nixpkgs
+
+For bootstrapping:
+
+- Bootstrap chain development in nixpkgs with [stage0-posix](): 4w, 10K EUR
+- Development review, testing, side-development in infrastructure/maintenance: during the whole project, 5K EUR
+- Exploring the bootstrapping of alternative programming languages, e.g. Rust, Go. 4w, 10K EUR
+- Total: 25K EUR
+
+Explaination:
+
+The working mode we envision is packaging [stage0-posix]() in nixpkgs which involves touching a core and fundamental part of Nixpkgs: the standard environment.
+
+This is chirurgical work to avoid breaking things and introducing significant regressions while not disturbing the work of the others by introducing very long recompile time.
+
+Moreover, review and testing is significant and important here as everyone has their own domain expertise on each piece of standard environment, having tooling or building better tools to work on those pieces is also important for long run maintenance.
+
+Finally, currently, most of Nixpkgs is bootstrapped by using C programs and Bash scripts, exploring alternative programming languages for those usecases requires the capability to bootstrap those very same programming languages, it would be interesting to see in which capacity it is now possible to bootstrap Rust using [mrustc](https://github.com/thepowersgang/mrustc) project, for example, making those languages interesting alternative.
+
 ---
 
 Overall, Nix maintainers essentially have to buy their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding. Therefore we have to assume consultancy rates to be able to keep to the time frame, with the option to trade budget for velocity to some extent.
 
 We expect multiple contributors to work in parallel where possible.
 
+Total: 114K EUR.
+
 ## Describe your relationship to the maintainers of this technology. Are you yourself the maintainer? Do they know you plan to do this work and do they support it? Please tell us more about how you obtained their support and how you plan to work together to make sure your contributions are accepted.
 
-[1. Security tracker]
 
 I am not part of [security team](https://nixos.org/community/teams/security.html), but I am [contributor](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+author%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed) and [reviewer of security fixes](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+reviewed-by%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed+) in nixpkgs in critical software.
 and I am the [current release manager of NixOS](https://nixos.org/community/teams/nixos-release.html) and released NixOS 23.05, I had to deal with [Node.js](https://github.com/NixOS/nixpkgs/pull/233399) and [OpenSSL](https://github.com/NixOS/nixpkgs/pull/231899) [end of life status](https://github.com/NixOS/nixpkgs/pull/233024)
@@ -230,8 +253,6 @@ Finally, I am in close touch with the security team and we discussed many times 
 be very welcomed and its deployment / management could be offloaded to the [newly formed NixOS infrastructure team](https://github.com/NixOS/foundation/issues/79) which I also interact
 with.
 
-[2. Boot story]
-
 I am part of the maintainers of [lanzaboote](https://github.com/nix-community/lanzaboote), one of the most complete UEFI Secure Boot implementation in NixOS, widely used in the NixOS community.
 I am also one of the shepherd of [the Bootspec v1 RFC](https://github.com/NixOS/rfcs/pull/125), author of [an RFC on how to bring UEFI to legacy users](https://github.com/NixOS/rfcs/pull/154) and working towards Bootspec v2.
 
@@ -245,16 +266,7 @@ we believe to have a consensual path forward to obtain a fully integrated vision
 
 Discussion about "the next steps" of lanzaboote have been discussed all the time and we have users asking more and more of that now that UEFI Secure Boot is easy to achieve.
 
-[3. Bootstrapping]
-
-// To expand
-
-- Development of bootstrap chain
-- PR reviews
-
-//
-
-Total so far: 89K EUR.
+Finally, for bootstrapping, the work will be handled by Emily Trau who kickstarted the minimal bootstrap project here: <https://github.com/NixOS/nixpkgs/pull/232329> and is involved in the bootstrap community, it is already being reviewed and improved by the low-level community in Nixpkgs.
 
 Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4).
 
