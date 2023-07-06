@@ -2,9 +2,14 @@
 
 ## What open source infrastructure component would you like to contribute to? Please provide more details.
 
-[Nix](https://nix.dev/) is an open source build system, configuration management system, and mechanism for deploying software, focused on reproducibility. It is the basis of an ecosystem of exceptionally powerful tools – including Nixpkgs, [the largest, most up-to-date software repository in the world](https://repology.org/repositories/graphs), and NixOS, a Linux distribution that can be configured fully declaratively, with unmatched flexibility. For its proponents, Nix embodies technology sovereignty. It is leveraged and relied upon by computer enthusiasts, professionals, and organisations who recognise its value for all steps in the software development lifecycle.
+[Nix](https://nix.dev/) is an open source build system, configuration management system, and mechanism for deploying software, focused on reproducibility.
+It is the basis of an ecosystem of exceptionally powerful tools – including Nixpkgs, [the largest, most up-to-date software repository in the world](https://repology.org/repositories/graphs), and NixOS, a Linux distribution that can be configured fully declaratively, with unmatched flexibility.
+For its proponents, Nix embodies technology sovereignty.
+It is leveraged and relied upon by computer enthusiasts, professionals, and organisations who recognise its value for all steps in the software development lifecycle.
 
-Nixpkgs is the largest software collection in existence, at the time of writing, totaling more than 85 000 of packages according to [Repology](https://repology.org/repository/nix_unstable). It does this by encapsulating various software ecosystems such as [Python, Rust, Node.js, and more](https://nixos.org/manual/nixpkgs/unstable/#chap-language-support). As a result, Nixpkgs is a valuable security target with a far reach, and we would like to address three aspects of it:
+Nixpkgs is the largest software collection in existence, at the time of writing, totaling more than 85 000 of packages according to [Repology](https://repology.org/repository/nix_unstable).
+It does this by encapsulating various software ecosystems such as [Python, Rust, Node.js, and more](https://nixos.org/manual/nixpkgs/unstable/#chap-language-support).
+As a result, Nixpkgs is a valuable security target with a far reach, and we would like to address three aspects of it:
 
 - Bootstrapping Nixpkgs from very small auditable binaries
 - Tracking and addressing security on the whole ecosystem in an efficient fashion
@@ -12,22 +17,31 @@ Nixpkgs is the largest software collection in existence, at the time of writing,
 
 ## Why is this technology critical? Please explain to us the relevance of this technology.
 
-This year Nix has seen its 20th anniversary. We estimate the community to consist of 100 mostly volunteer developers, 2 000 contributors, more than 15 000 active users, and 100 companies using and relying on Nix. [Recent social media activity](https://www.youtube.com/watch?v=fuWPuJZ9NcU) reaches on the order of 100 000 people. The Nix ecosystem is on an [exponential growth trajectory](https://ossinsight.io/analyze/NixOS/nixpkgs#overview) in terms of user adoption and development activity at the periphery.
+This year Nix has seen its 20th anniversary.
+We estimate the community to consist of 100 mostly volunteer developers, 2 000 contributors, more than 15 000 active users, and 100 companies using and relying on Nix.
+[Recent social media activity](https://www.youtube.com/watch?v=fuWPuJZ9NcU) reaches on the order of 100 000 people.
+The Nix ecosystem is on an [exponential growth trajectory](https://ossinsight.io/analyze/NixOS/nixpkgs#overview) in terms of user adoption and development activity at the periphery.
 
-Nix has the potential to become a default in the software development tool stack, by drastically reducing the time required to start working on software development projects – written in any language – and the cost of maintaining and sharing build setups and development environments. These can build on top of Nixpkgs, which today supplies the largest collection of free software in existence ready for use. Packages and services can be configured and deployed through NixOS more flexibly, reliably, efficiently than with any comparable tool. The Nix ecosystem can enable almost indefinite reproducibility of builds and configurations: [Nix and legacy enterprise software development: an unlikely match made in heaven](https://talks.nixcon.org/nixcon-2022/talk/QQPBFW/).
+Nix has the potential to become a default in the software development tool stack, by drastically reducing the time required to start working on software development projects – written in any language – and the cost of maintaining and sharing build setups and development environments.
+These can build on top of Nixpkgs, which today supplies the largest collection of free software in existence ready for use.
+Packages and services can be configured and deployed through NixOS more flexibly, reliably, efficiently than with any comparable tool.
+The Nix ecosystem can enable almost indefinite reproducibility of builds and configurations: [Nix and legacy enterprise software development: an unlikely match made in heaven](https://talks.nixcon.org/nixcon-2022/talk/QQPBFW/).
 
 It serves as the platform accelerating and keeping usable countless software experiments that would otherwise be intractable or have long become inaccessible as their environments grow past them.
 
 Moreover, the public [Nix binary cache](http://cache.nixos.org/) provides operational software artefacts from more than a decade back, some of which cannot be obtained otherwise any more.
 
-In short, Nix reduces the global cost of software production and long-term use by a tangible amount. Making it the trusted choice for reliable, up-to-date software will also make said software production dependable by default.
+In short, Nix reduces the global cost of software production and long-term use by a tangible amount.
+Making it the trusted choice for reliable, up-to-date software will also make said software production dependable by default.
 
 ## Please provide a brief overview over your project’s dependencies, including your own dependencies and projects that rely on your technology.
 
 Bootstrapping Nixpkgs is all about *reducing dependencies*, but this effort builds on top of the work of [stage0-posix](https://github.com/oriansj/stage0-posix) and [GNU Mes](https://www.gnu.org/software/mes/), which form our trusted minimal bootstrapping chain.
 
 Early boot security is an initiative in collaboration with the [UAPI group](https://github.com/orgs/uapi-group/) formed by Linux distribution developers, which NixOS is a member of.
-UEFI is another important piece of the puzzle, but one we depend on in a modular fashion, and we could replace it. An interesting example in the Nix community is [OwnerBoot](https://sr.ht/~amjoseph/ownerboot/), a completely "user-owned" boot chain leveraging [Coreboot](https://www.coreboot.org/) and [LinuxBoot](https://www.linuxboot.org/) which completely replaces UEFI. Finally, most, if not all, of the software is developed in the [Rust programming language](https://www.rust-lang.org/), known for safe low-level programming, with excellent UEFI support.
+UEFI is another important piece of the puzzle, but one we depend on in a modular fashion, and we could replace it.
+An interesting example in the Nix community is [OwnerBoot](https://sr.ht/~amjoseph/ownerboot/), a completely "user-owned" boot chain leveraging [Coreboot](https://www.coreboot.org/) and [LinuxBoot](https://www.linuxboot.org/) which completely replaces UEFI.
+Finally, most, if not all, of the software is developed in the [Rust programming language](https://www.rust-lang.org/), known for safe low-level programming, with excellent UEFI support.
 
 As for tracking security issues, we will use web technologies such as Django (Python) to track security issues and display the full software bill of materials (SBOM) generated from the project during its lifetime.
 
@@ -49,27 +63,34 @@ Tools in the Nix ecosystem are primarily suited to professional software develop
 
 Therefore, improving Nixpkgs is improving all of those users' projects at the same time: providing security tracking, boot chains, and a bootstrap toolchain contributes to strengthening large and diverse software ecosystems building on top of Nix.
 
-The NLnet Foundation is partnering with the NixOS Foundation to leverage Nix’s capabilities for providing sustainably accessible software under the umbrella of the Next Generation Internet (NGI) initiative of the European Commission. Improving security of Nixpkgs would open up a way for downstream projects supported through NGI to build more advanced solutions to tackle state of the art problems in the industry.
+The NLnet Foundation is partnering with the NixOS Foundation to leverage Nix’s capabilities for providing sustainably accessible software under the umbrella of the Next Generation Internet (NGI) initiative of the European Commission.
+Improving security of Nixpkgs would open up a way for downstream projects supported through NGI to build more advanced solutions to tackle state of the art problems in the industry.
 
-A working bootstrap toolchain, providing total control of our dependencies, will ensure the ability to access and use historical software, as preserved by Software Heritage, in the long run. This will enable projects that build and run with Nix today to continue working decades into the future.
+A working bootstrap toolchain, providing total control of our dependencies, will ensure the ability to access and use historical software, as preserved by Software Heritage, in the long run.
+This will enable projects that build and run with Nix today to continue working decades into the future.
 
 ## How are decisions regarding this technology’s development made? Please describe the project’s governance model.
 
-Individuals and loosely organised contributor or maintainer teams review each other’s work and discuss technical decisions in public. Despite the principal author technically being a BDFL for Nix (the package manager), there are only weak and implicit power structures that are largely centered around demonstrated achievements, and decisions largely are based on technical merit as judged by those involved. We proudly cultivate a vibrant and growing community of contributors, as demontrated by Nixpkgs being one of the most active projects on GitHub.
+Individuals and loosely organised contributor or maintainer teams review each other’s work and discuss technical decisions in public.
+Despite the principal author technically being a BDFL for Nix (the package manager), there are only weak and implicit power structures that are largely centered around demonstrated achievements, and decisions largely are based on technical merit as judged by those involved.
+We proudly cultivate a vibrant and growing community of contributors, as demontrated by Nixpkgs being one of the most active projects on GitHub.
 
-Self-organised formal [community teams](https://nixos.org/community/#governance-teams) take responsibility for maintaining code in their areas of expertise, and have a more formal communication and permission structure. Otherwise, apart from more regular activity, they operate just like any other group of contributors.
+Self-organised formal [community teams](https://nixos.org/community/#governance-teams) take responsibility for maintaining code in their areas of expertise, and have a more formal communication and permission structure.
+Otherwise, apart from more regular activity, they operate just like any other group of contributors.
 
 Nix itself is currently [maintained by a team of six people](https://github.com/NixOS/nix/tree/master/maintainers#members) including principal author, who meet twice a week to discuss technical decisions and review contributions.
 
 Ecosystem-wide technical decisions are negotiated in an [RFC process](https://github.com/NixOS/rfcs/).
 
-The NixOS Foundation mainly ensures funding for critical assets such as the binary cache, manages permissions in the GitHub organisation, and facilitates community activities. The Foundation board as a legal entity is not involved in technical decisions.
+The NixOS Foundation mainly ensures funding for critical assets such as the binary cache, manages permissions in the GitHub organisation, and facilitates community activities.
+The Foundation board as a legal entity is not involved in technical decisions.
 
 Project governance has immensely gained in structure lately: In the past year, four of the eleven currently active community teams were formed, the NixOS Foundation board was restructured, and there exist plans for setting up paid support functions to ensure continued operations.
 
 ## How does this project handle security risks? Are there policies, procedures, or tools in place to minimize the introduction of vulnerabilities or undesired contributions?
 
-There exists a [security team](https://nixos.org/community/teams/security.html) and an [infrastructure team](https://nixos.org/community/teams/infrastructure.htm). The latter tends to critical assets, such as the build servers and the security keys which sign Nixpkgs software.
+There exists a [security team](https://nixos.org/community/teams/security.html) and an [infrastructure team](https://nixos.org/community/teams/infrastructure.htm).
+The latter tends to critical assets, such as the build servers and the security keys which sign Nixpkgs software.
 
 [Security-relevant issues and pull-requests](https://github.com/NixOS/nixpkgs/labels/1.severity%3A%20security) are tagged by their maintainers, the security team, or contributors, e.g. in case where CVEs are not used.
 
@@ -78,20 +99,23 @@ There are multiple attack surfaces in Nixpkgs:
 1. Authenticating sources and ensuring we package software from trusted sources: not all upstreams have a signing infrastructure and publish signed tarballs. Our system is able to secure even non-HTTPS sources by validating their content hash.
 2. Validating that upstream projects are in good health and not jeopardized: we confirmed our ability as a community to do this multiple times, for example in the various Minecraft launcher incidents in the past leading to multiple forks.
 3. Tarballs can exploit vulnerable code in our decompressor. We already apply defense in depth to ensure we limit the blast radius, but we can go much further and completely restrain the capabilities of our decompressors while pushing for adopting more memory-safe decompressors. The same applies for any tool to fetch sources, like Git or Mercurial.
-4. Backdooring attempts to ship innocent updates with hidden payloads can happen, like with the Linux kernel, systemd or any open source project. Our code review system will usually thwart attempts at this as long as source validation is honored. Still, sophisticated attacks can be mounted with long-term covert operations against the repository by crafting virtual identities, manipulated by the same rogue entity. Those attacks can only be mitigated by pushing for more and more defense in depths measures like we do with systemd hardening and hardening of our software by default (via compiler flags). 
+4. Backdooring attempts to ship innocent updates with hidden payloads can happen, like with the Linux kernel, systemd or any open source project. Our code review system will usually thwart attempts at this as long as source validation is honored. Still, sophisticated attacks can be mounted with long-term covert operations against the repository by crafting virtual identities, manipulated by the same rogue entity. Those attacks can only be mitigated by pushing for more and more defense in depths measures like we do with systemd hardening and hardening of our software by default (via compiler flags).
 
 In Nixpkgs, there are two big families of software: packages that are depended upon by many others (*core packages*), and packages that are leaves in the dependency graphs (*leaf packages*).
 
-The first has subfamilies depending on the importance of the package. For example, some are C libraries – very critical for any kind of software – while another may be geospatial Python dependencies, critical only for the geospatial software ecosystem.
+The first has subfamilies depending on the importance of the package.
+For example, some are C libraries – very critical for any kind of software – while another may be geospatial Python dependencies, critical only for the geospatial software ecosystem.
 There are usually clear ownership structures (using GitHub's `CODEOWNERS` file), where it is expected to wait for maintainers' approval befor merging a change.
 
 The second can be all sorts of ad-hoc software leveraging dependencies already present in Nixpkgs.
-These packages are much more prone to the full attack surface it's usually hard to find a contributor with the necessary domain expertise on that leaf package. This tends to encourage courtesy approvals by maintainers who are otherwise not involved.
-
+These packages are much more prone to the full attack surface it's usually hard to find a contributor with the necessary domain expertise on that leaf package.
+This tends to encourage courtesy approvals by maintainers who are otherwise not involved.
 
 Different components have different ownership structures.
 In Nixpkgs, process improvements are constantly being discussed in order to establish a mutual understanding of the roles and expectations of committers.
-For Nix itself, only maintainers have write access, and only the principal author can publish releases. Nixpkgs and NixOS have a much broader committer community with largely implicit rules. There is a high degree of social trust involved, and active developers and maintainers, while culturally and geographically diverse, usually have ongoing working relationships marked by diligent reviews and critical discussions.
+For Nix itself, only maintainers have write access, and only the principal author can publish releases.
+Nixpkgs and NixOS have a much broader committer community with largely implicit rules.
+There is a high degree of social trust involved, and active developers and maintainers, while culturally and geographically diverse, usually have ongoing working relationships marked by diligent reviews and critical discussions.
 
 ## How will you address the challenge described? Give an overview of your work and why it is significant, specifically addressing the challenge. Explain what the field will learn from your proposed work and how it contributes to the long-term sustainability of the technology.
 
@@ -99,7 +123,8 @@ Reinforcing the security posture of Nixpkgs is crucial to enable mass adoption i
 
 Here, we focus on reducing our reliance on foreign binaries to recompile Nixpkgs from scratch (along the lines of [Reflections on Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf)), ensuring we are are indeed running the code we compiled by leveraging existing security components, and putting in place mechanisms that allow us to deliver the most up-to-date, secure software whenever it is available in a way that can be sustained given our maintainer capacities.
 
-Each of these three items contributes to fundamental security hardening measures, and aims to protect Nixpkgs against a class of vulnerabilities. We will express the significance in matters of "what would success look like".
+Each of these three items contributes to fundamental security hardening measures, and aims to protect Nixpkgs against a class of vulnerabilities.
+We will express the significance in matters of "what would success look like".
 
 More precisely:
 
@@ -112,7 +137,8 @@ A security team usually provides automation for itself, maintainers, and end use
 In the past, Arch Linux's security tracker was considered for reuse in NixOS, but it is very old and tailored to Arch Linux.
 Here, we propose to set up a new security tracker with Nixpkgs and NixOS in mind, but in a generic way, which can be reused and self-hosted, not only for Nixpkgs but any overlay of Nixpkgs.
 
-Our main challenge is to process the large amount of data generated from ingesting many security feeds. We would tackle this by providing powerful filtering capabilities linking all the available metadata, for example from Repology and Nixpkgs.
+Our main challenge is to process the large amount of data generated from ingesting many security feeds.
+We would tackle this by providing powerful filtering capabilities linking all the available metadata, for example from Repology and Nixpkgs.
 
 A prototype usable by the security team would:
 
@@ -122,8 +148,9 @@ A prototype usable by the security team would:
 
 As for boot security, NixOS recently acquired [a form of user-owned Secure Boot](https://github.com/nix-community/lanzaboote) as part of [an NLnet grant](https://nlnet.nl/project/NixOS-UEFI/).
 
-As of now, Secure Boot in Nixpkgs is [slowly being upstreamed](https://github.com/NixOS/nixpkgs/pull/231951), but the Secure Boot ecosystem is still in its infancy. It still requires merging existing patches to `systemd` to be viable in the long run.
-The next stage after Secure Boot is to have measured boot, which is the final piece to have a reasonable form of security in the boot process of a Linux distribution. 
+As of now, Secure Boot in Nixpkgs is [slowly being upstreamed](https://github.com/NixOS/nixpkgs/pull/231951), but the Secure Boot ecosystem is still in its infancy.
+It still requires merging existing patches to `systemd` to be viable in the long run.
+The next stage after Secure Boot is to have measured boot, which is the final piece to have a reasonable form of security in the boot process of a Linux distribution.
 
 As a result of this project, NixOS will be able to boot with:
 
@@ -136,12 +163,15 @@ Also, NixOS will be able to be deployed in situations where:
 2. It is desirable to authenticate and verify the integrity of the Nix store
 3. Updates are mission-critical and recovery must be assured in case of failed upgrades, e.g. mobile or embedded systems.
 
-A complete bootstrapping toolchain will for the first time make possible to inspect our complete build graph down to a piece of foundational machine code that is small enough to be audited manually. More importantly, it will allow us to automatically ensure the absolute integrity of our entire software supply chain, and that all build artefacts correspond to their source code. This will also unlock our long-term goal to find ever shorter bootstrapping chains in order to reduce our reliance on massive amounts of historical source code, auditing which is intractable.
+A complete bootstrapping toolchain will for the first time make possible to inspect our complete build graph down to a piece of foundational machine code that is small enough to be audited manually.
+More importantly, it will allow us to automatically ensure the absolute integrity of our entire software supply chain, and that all build artefacts correspond to their source code.
+This will also unlock our long-term goal to find ever shorter bootstrapping chains in order to reduce our reliance on massive amounts of historical source code, auditing which is intractable.
 
 ### What the field will learn from our work
 
 In all security areas we presented, most of our work will be both reusable component-wise as well as available as a whole "off the shelf".
-Having a complete integration of the various techniques and tools will provide a unique opportunity for any software developer to inspect and work with our solution. By offering a sufficiently transparent setup in a highly visible project such as NixOS, we intend to provide learning opportunities for motivated people.
+Having a complete integration of the various techniques and tools will provide a unique opportunity for any software developer to inspect and work with our solution.
+By offering a sufficiently transparent setup in a highly visible project such as NixOS, we intend to provide learning opportunities for motivated people.
 
 ### How our work will contribute to sustainability of Nix, the Nix ecosystem, and FOSS more generally
 
@@ -183,7 +213,7 @@ Total: 120 person days, 118 000 EUR.
 
 Total: 75 person days, 60 000 EUR
 
-Explanation: 
+Explanation:
 
 The working mode we envision is having a strong web developer with extensive Nix experience developing a reusable high-standard platform with maintenance in mind, i.e. end-to-end testing, etc, with enough flexibility to be reused by similar Linux distributions, e.g. Guix.
 
@@ -191,7 +221,8 @@ We decided to split the work into 3 "big milestones" or "target goals", aiming t
 Each milestone involves developing specific features and requires close collaboration with the target audience to ensure we satisfy their needs, following UX/UI research methods and best practices.
 Each phase includes a user discovery part and a development part; user discovery can be performed asynchronously in some situations to improve the velocity.
 
-[`label-tracker`] is an important piece of the puzzle for end-users to benefit from the integration of NixOS, our Git repositories, and our channels to answer non-trivial questions like "Is this PR in my distribution channel?" or "When is this PR expected to land in my distribution channel?". Those improvements can include performance work, scaling up the infrastructure to make it an asset in the Nix community available to everyone.
+[`label-tracker`] is an important piece of the puzzle for end-users to benefit from the integration of NixOS, our Git repositories, and our channels to answer non-trivial questions like "Is this PR in my distribution channel?" or "When is this PR expected to land in my distribution channel?".
+Those improvements can include performance work, scaling up the infrastructure to make it an asset in the Nix community available to everyone.
 
 ### Bootstrapping Nixpkgs
 
@@ -213,15 +244,16 @@ Future exploration of alternative programming languages for that task will requi
 
 ### Summary
 
-Overall, Nix maintainers essentially have to dedicate their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding. Therefore we have to assume consultancy rates to be able to keep to the time frame, with the option to trade budget for velocity to some extent.
+Overall, Nix maintainers essentially have to dedicate their employers’ time or take compensation that can compete with other engagements; known contributors who could do the bulk of the work are in a similar situation or otherwise would need substantial time for onboarding.
+Therefore we have to assume consultancy rates to be able to keep to the time frame, with the option to trade budget for velocity to some extent.
 
 We expect multiple contributors to work in parallel where possible.
 
-Total: 226 000 EUR.
+Total: 226 000 EUR
 
 ## Describe your relationship to the maintainers of this technology. Are you yourself the maintainer? Do they know you plan to do this work and do they support it? Please tell us more about how you obtained their support and how you plan to work together to make sure your contributions are accepted.
 
-I assisted Ryan Lahfa and Emily Trau with developing this proposal. 
+I assisted Ryan Lahfa and Emily Trau with developing this proposal.
 
 Ryan Lahfa is a [Nixpkgs security contributor](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+author%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed) and [reviewer of security fixes](https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+reviewed-by%3ARaitoBezarius+label%3A%221.severity%3A+security%22+is%3Aclosed+), the [current release manager of NixOS](https://nixos.org/community/teams/nixos-release.html), and oversaw the release of NixOS 23.05.
 
@@ -237,6 +269,7 @@ The bootstrapping work will be led by Emily Trau who kickstarted the [minimal bo
 
 Preparations for the grant applications were [announced in the community forum](https://discourse.nixos.org/t/german-federal-funding-for-foss-development/29036/4), with support of the NixOS Foundation board:
 
-> While the NixOS Foundation board is not involved in technical decisions in the Nix ecosystem, we strongly support these proposed efforts to solve long-standing issues and trust the authors of these proposals to implement them as described. We are convinced that succeeding with these projects will enable more reliable software infrastructure and support its long-term maintenance both in the Nix ecosystem as well as for projects relying on it.
+> While the NixOS Foundation board is not involved in technical decisions in the Nix ecosystem, we strongly support these proposed efforts to solve long-standing issues and trust the authors of these proposals to implement them as described.
+> We are convinced that succeeding with these projects will enable more reliable software infrastructure and support its long-term maintenance both in the Nix ecosystem as well as for projects relying on it.
 >
 > — NixOS Foundation board
