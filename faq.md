@@ -83,9 +83,23 @@ In the past year, four of the eleven currently active community teams were forme
 Asked by:
 - [Sovereign Tech Fund](https://sovereigntechfund.de/en/challenges/)
 
-There exists a [security team](https://nixos.org/community/teams/security.html) and an [infrastructure team](https://nixos.org/community/teams/infrastructure.html) tending to critical assets. [Security-relevant issues and pull-requests](https://github.com/NixOS/nixpkgs/labels/1.severity%3A%20security) are automatically tagged by a [vulnerability tracking system](https://github.com/nix-community/vulnix/).
+There exists a [security team](https://nixos.org/community/teams/security.html) and an [infrastructure team](https://nixos.org/community/teams/infrastructure.htm).
+The latter tends to critical assets, such as the build servers and the security keys which sign Nixpkgs software.
 
-Different components have different ownership structures.
-For Nix itself, only maintainers have write access, and only the principal author can publish releases.
-Nixpkgs and NixOS have a much broader committer community with largely implicit rules.
+[Security-relevant issues and pull-requests](https://github.com/NixOS/nixpkgs/labels/1.severity%3A%20security) are tagged by their maintainers, the security team, or contributors, e.g. in case where CVEs are not used.
+
+There are multiple attack surfaces in Nixpkgs:
+
+1. Authenticating sources: not all upstreams sign their code. Our system is able to sources by validating their content hash.
+2. Vetting upstream projects: we confirmed our ability as a community to identify at-risk upstream projects.
+3. Tarballs can exploit vulnerable code in our decompressor. The same applies for any tool to fetch sources.
+4. Adversarial contributions: Our code review system will usually thwart attempts at this as long as source validation is honored. Dedicated actors could still mount long-term sophisticated attacks.
+
+Core packages, whire are depended upon by many others, usually have clear ownership structures where it is expected to wait for maintainers' approval before merging a change.
+
+Packages at the leaves of the dependency graph are more vulnerable, as it's usually hard to find contributors with the necessary expertise.
+This tends to encourage courtesy approvals by maintainers who are otherwise not involved.
+
+Process improvements are constantly being discussed in order to establish a mutual understanding of the roles and expectations of committers.
+Still, in Nixpkgs and NixOS the committer community follows largely implicit rules.
 There is a high degree of social trust involved, and active developers and maintainers, while culturally and geographically diverse, usually have ongoing working relationships marked by diligent reviews and critical discussions.
