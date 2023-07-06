@@ -125,8 +125,8 @@ Improving factoring, testing, and documentation of the Nix store, the core compo
 
 Already the very fact of a concerted effort with multiple people involved will act as a forcing function to share and document tacit knowledge, and to communicate activities and outcomes with a broader audience of potential contributors.
 
-The primary benefit we see is that better test coverage will enable future refactorings to address long-standing technical issues.
-Those are currently impractical due to the risks of breaking widely used interfaces in subtle ways, which is unacceptable given the reliance on Nix’s reproducibility guarantees.
+The primary benefit we see is that better test coverage will enable future refactorings, unblock addressing long-standing technical issues, and make the code base more approachable to outside contributors.
+Substantial changes are currently impractical due to the risks of breaking widely used interfaces in subtle ways, which is unacceptable given the ever-growing reliance on Nix’s reproducibility guarantees.
 
 Providing the Nix store as a building block to application developers will allow for experimentation and innovation, both in the Nix ecosystem as well as in the wider software development community.
 Being able to build on top of the Nix store will allow software projects (with a suitable architecture) to plug it as a highly reliable and well-supported backend for common tasks around dependency management and data persistence, reducing duplication of work at low risk.
