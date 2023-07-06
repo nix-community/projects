@@ -148,6 +148,9 @@ Both aspects are major concerns for Nix users: Nix is well-known for its stabili
 Well-defined interfaces, accompanying documentation, and a more comprehensive test suite will ease learning and adoption for developers, making quality contributions more likely.
 That would reduce maintainers’ work load and contribute to making the maintainer role more appealing; having a separate component as a domain of ownership would also help with managing responsibilities and expectations in the long run.
 
+Eventually, as the Nix store is adopted by other projects, we will be able to make use of them directly in Nixpkgs, for example through [RFC 92](https://github.com/NixOS/rfcs/blob/master/rfcs/0092-plan-dynamism.md).
+This can close the loop between system and language-specific package managers, removing their current disconnect and enabling a virtuous cycle of collaboration between them.
+
 ## How will you accomplish the work? Please provide a list of deliverables with associated effort and cost of each deliverable.
 
 - Take inventory and document the intent of existing tests (2w, 8 000 EUR)
