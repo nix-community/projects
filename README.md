@@ -19,7 +19,7 @@ Keeping the reusable parts of previous efforts can also foster an attitude of "n
 
 ## How to contribute
 
-- If you apply for funding, please consider adding generic questions you had to deal with and your answers to this collection.
+- If you apply for funding, please consider adding generic questions you had to deal with and your answers to the collection of [Fequently Asked Questions](./faq.md).
 
   For public funding, reference the call for proposals the questions were answered for.
 
