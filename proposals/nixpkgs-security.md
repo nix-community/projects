@@ -96,7 +96,7 @@ The latter tends to critical assets, such as the build servers and the security 
 
 There are multiple attack surfaces in Nixpkgs:
 
-1. Authenticating sources: not all upstreams sign their code. Our system is able to sources by validating their content hash.
+1. Authenticating sources: not all upstreams sign their code. Our system is able to validate sources by their content hash.
 2. Vetting upstream projects: we confirmed our ability as a community to identify at-risk upstream projects.
 3. Tarballs can exploit vulnerable code in our decompressor. The same applies for any tool to fetch sources.
 4. Adversarial contributions: Our code review system will usually thwart attempts at this as long as source validation is honored. Dedicated actors could still mount long-term sophisticated attacks.
