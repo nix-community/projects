@@ -113,7 +113,7 @@ Subtotal: 71d, 60 800 EUR
   - Daemonise the local scanner (2d, 2 000 EUR)
   - Performance improvements (2d, 2 000 EUR)
 
-Subtotal: 73d, 83 000 EUR
+Subtotal: 83d, 83 000 EUR
 
 ## Full-source bootstrap
 
