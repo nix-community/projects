@@ -193,7 +193,7 @@ We expect this to have a compounding effect on overall productivity, as we estim
   We want to achieve this by making more systemic knowledge explicit and easier to discover, access, and manipulate, and thus ease onboarding of new contributors, and reduce contribution turnaround time.
 
   - Tools for review automation (50k)
-  - Modularise the Nix configuration system (30k)
+  - Improve code organisation in C++ Nix (30k)
   - Increase coverage and reduce duration of Nix integration testing (30k)
   - Monitoring and data gathering for informed decision-making (30k)
   - Professionalise the moderation team (50k)
