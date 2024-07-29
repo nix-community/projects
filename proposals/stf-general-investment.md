@@ -223,7 +223,7 @@ We expect this to have a compounding effect on overall productivity, as we estim
     - evaluation cache
     - memory layout optimisations
     - minimal NixOS modules list
-  - Rewrite the Hydra front-end (40k)
+  - Fix performance bottlenecks and maintainability issues in Hydra (40k)
 
 - Strengthen supply-chain and end-user security (300k)
 
