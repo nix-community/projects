@@ -90,7 +90,7 @@ The proposed improvements for our contributor experience and quality of maintena
 - Making more dependencies readily available and keeping them up to date
 - Making for a safer, more robust software supply chain
 - Further ease self-hosting and customisation of software infrastructure
-- Ease publicly sharing their own improvements
+- Leveraging open source, adopting improvements created by users in a sustainable way
 
 This will increase their productivity, and repeatability and portability of their work, and massively reduce the total cost of adoption and ownership of IT systems for everyone.
 
