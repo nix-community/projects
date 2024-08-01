@@ -29,15 +29,19 @@ Nix makes computation with file systems highly repeatable; Nixpkgs is the larges
 
 ## Describe your project more in-depth. Why is it critical? 300 words
 
-[Nix](https://nix.dev) reduces the global cost of software production and long-term use by a tangible amount.
+[Nix](https://nix.dev) meaningfully reduces the global cost of software production and long-term use.
 It is the basis of an ecosystem of exceptionally powerful tools – including Nixpkgs, [the largest, most up-to-date software repository in the world](https://repology.org/repositories/graphs), and NixOS, a Linux distribution that can be configured fully declaratively, with unmatched flexibility.
+Together they empower the whole open source ecosystem, and increase the technological sovereignty of individuals and organisations alike.
+
+A large and growing number of open source applications and decentralized internet services can be deployed on NixOS with a single line of code.
+This significantly lowers the barrier to open source adoption.
 
 The Nix ecosystem is already on the way to become a default in the software development tool stack, by drastically shortening the time required to start working on software projects – written in any language – and lowering the cost of maintaining and sharing build setups and development environments.
 It offers tools to bring together all of open source in one coherent, dependable environment.
+It eases and stimulates contributions to public code.
 
 It also serves as the platform to accelerate, keep usable, and drive adoption of countless software innovations that would otherwise be inaccessible to their audiences.
 Moreover, the public [Nix binary cache](http://cache.nixos.org/) provides operational software artefacts from more than a decade back, some of which cannot be obtained otherwise any more.
-It thus already supports technological sovereignty and autonomy for individuals and organisations alike.
 
 We estimate the community to consist of 100 mostly volunteer maintainers, more than 2 000 contributors, more than [38 000 active users](https://survey.stackoverflow.co/2024/technology#2-other-tools), and 100 companies using and relying on Nix.
 [Recent social media activity](https://www.youtube.com/watch?v=fuWPuJZ9NcU) reaches on the order of 500 000 people.
