@@ -216,7 +216,7 @@ We expect this to have a compounding effect on overall productivity, as we estim
 
 - Reduce ongoing costs for continuous integration and distribution (180k)
 
-  Infrastructure expenses are a signfificant risk for the ecosystem, because they are almost completely sponsored by companies who may end their support any time.
+  Infrastructure expenses are a significant risk for the ecosystem, because they are almost completely sponsored by companies who may end their support any time.
   Reducing these ongoing costs will make it easier to migrate between providers or even self-host.
   Improving CI performance will also contribute to faster workflows, and increase responsiveness to security incidents.
   This will also impact all downstream users and significantly reduce their storage and energy requirements for the forseeable future.
