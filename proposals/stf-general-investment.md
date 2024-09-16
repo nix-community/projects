@@ -31,7 +31,6 @@ Nix makes computation with file systems highly repeatable; Nixpkgs is the larges
 
 [Nix](https://nix.dev) meaningfully reduces the global cost of software production and long-term use.
 It is the basis of an ecosystem of exceptionally powerful tools – including Nixpkgs, [the largest, most up-to-date software repository in the world](https://repology.org/repositories/graphs), and NixOS, a Linux distribution that can be configured fully declaratively, with unmatched flexibility.
-Together they empower the whole open source ecosystem, and increase the technological sovereignty of individuals and organisations alike.
 
 A large and growing number of open source applications and decentralized internet services can be deployed on NixOS with a single line of code.
 This significantly lowers the barrier to open source adoption.
@@ -46,6 +45,9 @@ Moreover, the public [Nix binary cache](http://cache.nixos.org/) provides operat
 We estimate the community to consist of 100 mostly volunteer maintainers, more than 2 000 contributors, more than [38 000 active users](https://survey.stackoverflow.co/2024/technology#2-other-tools), and 100 companies using and relying on Nix.
 [Recent social media activity](https://www.youtube.com/watch?v=fuWPuJZ9NcU) reaches on the order of 500 000 people.
 The Nix ecosystem is on an [exponential growth trajectory](https://ossinsight.io/analyze/NixOS/nixpkgs#overview) in terms of user adoption and development activity at the periphery.
+
+Increasing popularity also puts the Nix ecosystem and its users at growing risk of supply chain attacks.
+Ever more individuals and organizations rely on it, but our capacity to protect them from harm is still limited.
 
 ## Please provide a brief overview over your project’s own, most important, dependencies. 300 words
 
