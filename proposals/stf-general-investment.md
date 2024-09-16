@@ -77,11 +77,11 @@ Ever more individuals and organizations rely on it, but our capacity to protect 
 - Various [scientific projects](https://www.youtube.com/watch?v=SjjEDTccpQA), such as in [high-performance computing](https://github.com/freuk/awesome-nix-hpc)
 - [Haskell Stack](https://docs.haskellstack.org/en/stable/nix_integration/)
 - Companies worldwide run their business on Nix or NixOS, for example:
-    - [Eviny](https://www.eviny.no), a Norwegian energy supplier
-    - [WDZ](https://www.wdz.de), software for German public infrastructure
-    - [Warren](https://warren.io), a European self-service cloud computing platform
-    - [Google IDX](https://idx.dev), collaborative software development platform
-    - [Replit](https://replit.com)
+  - [Eviny](https://www.eviny.no), a Norwegian energy supplier
+  - [WDZ](https://www.wdz.de), software for German public infrastructure
+  - [Warren](https://warren.io), a European self-service cloud computing platform
+  - [Google IDX](https://idx.dev), collaborative software development platform
+  - [Replit](https://replit.com)
 
 ## Which target groups does your project address (who are its users?) and how would they benefit from activities proposed for funding (directly and indirectly)? 300 words
 
@@ -133,14 +133,14 @@ In the course of their work, all of our target audiences may regularly need to:
 ## How was the work on the project made possible so far (structurally, financially, including volunteer work)? If applicable, list others sources of funding that you applied for and/or received. 300 words
 
 By far most contributors are volunteers.
-A number of long-term maintainers contribute to the ecosystem in the context of their employment or business.
+A small number of long-term maintainers contribute to the ecosystem in the context of their employment or business.
 Some work is funded by companies paying maintainers, usually to develop substantial features rather than incrementally reducing tech debt.
 
 Some contributors fund their independent work through NLnet research grants.
-We also have a partnership with NLnet that provides funding for packaging more software with Nix.
+We also have a partnership with NLnet that provides funding for packaging more software with Nix through the European Commission's NGI program.
 
 The NixOS Foundation receives [donations on Open Collective](https://opencollective.com/nixos) (mostly from individuals, sometimes from businesses), which are used for infrastructure expenses, supporting local meetups, and small-scale development efforts.
-Currently the cache storage is partially sponsored by Amazon, cache traffic is sponsored by Fastly, build machines are sponsored by Equinix.
+Currently the cache storage is sponsored by Amazon, cache traffic is sponsored by Fastly, build machines are sponsored by Equinix.
 
 ## What are the challenges you currently face in the maintenance of the technology? 300 words
 
@@ -151,7 +151,7 @@ managing contributions, addressing security vulnerabilites, project governance, 
   - Dealing with vendored or compiled dependencies
   - Decreasing turnaround time for triaging incidents and deploying patches
 - We have only very basic solutions to automatically verify, enforce, and implement licensing compliance
-- We lose a lot of momentum on friction in the contribution process
+- We lose a lot of friction in the contribution process
   - There is no systematic onboarding of new contributors with experienced maintainers
   - We’re lacking a recommendation system for picking reviewers, ownership is often not evident
   - We have too many communication platforms, most of which cannot be bridged (well or at all)
