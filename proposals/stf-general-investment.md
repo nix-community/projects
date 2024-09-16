@@ -99,6 +99,7 @@ The proposed improvements for our contributor experience and quality of maintena
 - Leveraging open source, adopting improvements created by users in a sustainable way
 
 This will increase their productivity, and repeatability and portability of their work, and massively reduce the total cost of adoption and ownership of IT systems for everyone.
+It would also make their setups more secure by default and make monitoring and mitigation of threats substantially more comprehensive and timely.
 
 ## Please describe a specific scenario for the use of your technology and how this meets the needs of your target groups. 300 words
 
