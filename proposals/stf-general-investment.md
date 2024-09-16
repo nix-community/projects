@@ -68,7 +68,7 @@ Ever more individuals and organizations rely on it, but our capacity to protect 
 
 ## Please provide a brief overview of projects that depend on your technology. 300 words
 
-- There are [40k GitHub repositories using the Nix language](https://github.com/search?q=language%3ANix&type=repositories&s=&o=desc)
+- There are [12k active GitHub repositories using the Nix language](https://github.com/search?q=language%3ANix+archived%3Afalse&type=repositories&s=&o=desc)
   - Including a plethora of [community projects around Nix](https://github.com/nix-community/)
 - The [NGI Zero software ecosystem](https://nlnet.nl/project/) with more than 400 active projects
 - [Spectrum OS](https://spectrum-os.org), a security-focused computing environment iterating on the ideas behind [Qubes OS](https://www.qubes-os.org)
